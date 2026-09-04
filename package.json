@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "next": "15.5.25",
@@ -20,7 +22,8 @@
     "@types/react-dom": "19.1.7",
     "eslint": "9.34.0",
     "eslint-config-next": "15.5.25",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "vitest": "^3.2.7"
   },
-  "description": "Sign Language Translator \u2014 Next.js App Router site"
+  "description": "Sign Language Translator — Next.js App Router site"
 }
