@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
+import "@/styles/legal-page.css";
 import "@/styles/privacy.css";
 import Icon from "@/components/ui/Icon";
 

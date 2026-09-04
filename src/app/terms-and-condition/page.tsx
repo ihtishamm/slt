@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
+import "@/styles/legal-page.css";
 import "@/styles/terms-and-condition.css";
 import Icon from "@/components/ui/Icon";
 
