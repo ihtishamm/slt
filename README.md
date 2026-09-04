@@ -8,6 +8,7 @@ npm run build      # production build
 npm start          # serve the build
 npm run lint
 npm run typecheck
+npm test           # vitest, the logic in src/lib
 ```
 
 ## Structure
@@ -15,7 +16,7 @@ npm run typecheck
 ```
 src/
 ├── app/                              one folder per route
-│   ├── layout.tsx                    <html>, header, footer, analytics, fonts
+│   ├── layout.tsx                    <html>, header, footer, analytics, font
 │   ├── page.tsx                      /              (ASL translator)
 │   ├── globals.css
 │   ├── not-found.tsx                 404
@@ -27,13 +28,16 @@ src/
 │                                     german, japanese, mexican, spanish
 ├── components/
 │   ├── layout/    SiteHeader, SiteFooter
-│   ├── translator/Translator          the text-to-fingerspelling widget
+│   ├── translator/Translator, SignSequence, VoiceInput, translator.css
 │   ├── baby/      BabySignExplorer, BabySignTracker
-│   ├── ui/        ImageZoom, LazyVideo, FaqAccordion, ScrollReveal
+│   ├── ui/        ImageZoom, LazyVideo, FaqAccordion, ScrollReveal, Icon
 │   └── seo/       JsonLd
-├── data/          alphabets, baby-signs, navigation, routes, social
-├── lib/           site config, SEO metadata factory
-└── styles/        one stylesheet per route
+├── data/          alphabets, sign-dictionary, baby-signs, navigation,
+│                  routes, social
+├── lib/           site config, SEO metadata factory,
+│                  sign-lookup, asl-gloss, translate (+ their tests)
+└── styles/        one stylesheet per route, plus the two shared sheets
+                   alphabet-page.css and legal-page.css
 
 public/
 ├── assets/images/                    shared images (logo, A–Z, 0–9, words)
@@ -90,16 +94,28 @@ export default function Page() {
 
 Every route imports one stylesheet from `src/styles/`. There is deliberately no
 large site-wide stylesheet: the original pages shared no common leading rules,
-so hoisting them into one global sheet would change which rules win. The six
-alphabet-language pages additionally share `alphabet-page.css`, which **must**
-be imported before the per-language file — concatenating the two reproduces the
-original stylesheet in its original order, and that ordering is what keeps the
-cascade correct.
+so hoisting them into one global sheet would change which rules win.
+
+Two sheets are shared, and in both cases **order matters** — the shared file
+must be imported *first*, and the per-page file second:
+
+- `alphabet-page.css` — the six alphabet-language pages (Australian, Chinese,
+  French, German, Mexican, Spanish). Concatenating it with the per-language file
+  reproduces the original stylesheet in its original order.
+- `legal-page.css` — `/privacy` and `/terms-and-condition`, whose stylesheets
+  were identical on 908 of 909 lines. Each page file now holds only its own
+  `.section { padding }`, which wins because it is imported second.
 
 `<img>` is used rather than `next/image` on purpose: the stylesheets size images
 through class selectors (`.alphabet-card img`, `.sign-image img`), and
 `next/image` renders its own wrapper with explicit dimensions, which would break
-those rules.
+those rules. Every `<img>` does carry `width`/`height` so the browser can
+reserve its space — run `node tools/add-image-dimensions.cjs` after adding new
+images, and it will fill them in from the files themselves.
+
+Nothing is loaded from a CDN. Poppins is self-hosted through `next/font`, and
+the seventeen icons the site uses are inline SVG in
+[`src/components/ui/Icon.tsx`](src/components/ui/Icon.tsx).
 
 ### Adding a sign language
 
@@ -108,6 +124,75 @@ those rules.
 3. Create `src/app/<name>-sign-language/page.tsx` rendering
    `<Translator alphabet="…" heading="…" convertLabel="…" />`.
 4. Add the route to [`src/data/routes.ts`](src/data/routes.ts) so it reaches the sitemap.
+
+## How the translator works
+
+Three steps, all in `src/lib`, all pure functions with tests. `translate()` is
+the single entry point — the UI and the tests run the same code.
+
+```
+English text
+  -> asl-gloss.ts     reorder into ASL gloss order
+  -> sign-lookup.ts   resolve each token to a sign, or fingerspell it
+  -> SignSequence     render video, still image, or spelled letters
+```
+
+**Grammar** (`asl-gloss.ts`). ASL is not English with different hands. The
+engine drops articles, the copula and do-support; moves time phrases to the
+front; moves question words to the end; puts negation after the verb; marks the
+past with FINISH; and topicalises objects, but only behind a verb known to take
+one. Verbs gloss in their base form, because ASL does not inflect for tense.
+
+It has no parser — only a closed vocabulary and ordered rewrite rules. Sentences
+outside those patterns pass through in their original order rather than being
+mangled: a wrong reordering teaches a learner something false, which is worse
+than teaching them nothing. `src/lib/asl-gloss.test.ts` is the specification for
+what "common sentence patterns" covers; add a failing case there before adding a
+rule.
+
+It also returns the non-manual markers (WHQ, YNQ, NEG, TOPIC) — the eyebrow and
+head movements that carry grammar in ASL — which the UI shows as badges.
+
+**Lookup** (`sign-lookup.ts`). Longest phrase first, so "thank you" is one sign
+rather than nine letters. Falls back through lemmatisation ("dogs", "eating")
+to fingerspelling. The dictionary is gated to ASL: it is ASL photography, and
+showing an ASL hand for "hello" on the British page would teach the wrong sign.
+
+## The sign dictionary
+
+`src/data/sign-dictionary.ts` is **generated**. Edit the table in
+`tools/gen-dictionary.cjs` and re-run it:
+
+```bash
+node tools/gen-dictionary.cjs
+```
+
+It verifies every asset exists, rejects two entries claiming the same English
+word, and reads each image's real dimensions.
+
+### Licensing is enforced at build time
+
+Every entry carries its own licence, and the generated module **refuses to
+load** if any entry is not cleared for commercial use — so `next build` fails
+rather than shipping it. This site runs AdSense, which makes it commercial use,
+and most open ASL corpora forbid exactly that:
+
+| Source | Commercial use |
+|---|---|
+| [WLASL](https://github.com/dxli94/WLASL) | No — C-UDA, "academic and computational use only" |
+| [ASL-LEX](https://asl-lex.org/download.html) | No — "expressly prohibited" |
+| [ASL Citizen](https://www.microsoft.com/en-us/research/project/asl-citizen/) | Negotiable — ASL_Citizen@microsoft.com |
+| [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Videos_of_sign_language) | Yes, CC BY-SA / PD, with attribution |
+
+Adding a video to an entry is all that is needed to upgrade it from a still
+image; nothing else in the code changes.
+
+## Voice input
+
+`VoiceInput.tsx` uses the browser's own Web Speech API. No key, no server cost,
+and no audio leaves the device. Chrome, Edge and Safari implement it; Firefox
+does not, and there the button renders disabled with an explanation rather than
+breaking. It needs HTTPS (localhost is exempt).
 
 ## The blog is still WordPress
 
@@ -132,7 +217,11 @@ These were bugs in the old pages, fixed as part of the conversion:
 
 - `hre="…"` instead of `href="…"` — 15 dead links across 9 pages.
 - Four pages used Font Awesome icon classes without loading the font, so those
-  icons never rendered. Fonts are now loaded once in the layout.
+  icons never rendered. Icons are now inline SVG, loaded from nowhere.
+- `alphabet-page.css` was never imported by anything, so the Mexican, Spanish,
+  German, French, Chinese and Australian pages served completely unstyled HTML
+  — six of the eighteen pages, from the migration until it was found.
+- The four social links on the contact page were `href="#"` and went nowhere.
 - The baby-sign page shipped modal CSS but never rendered the modal markup, so
   clicking a sign card threw a `TypeError`. The modal now works.
 - Analytics and AdSense ran on the home page only; they are now site-wide.
@@ -148,7 +237,7 @@ Deliberately left alone:
   rendered. Pass `highlightActive` to `SiteHeader` to switch it on.
 - `public/sw.js` is a third-party push-notification worker that loads code from
   `5gvci.com`. No page registers it, so it is inert — but it is worth deciding
-  whether it should be there at all.
+  whether it should be there at all. **Awaiting a decision from the site owner.**
 
 ## Known pre-existing gaps
 
@@ -156,5 +245,12 @@ Deliberately left alone:
   existed in that folder.
 - A few digraph images ship unused (German `SCH`, Mexican `ll`/`rr`/`nn`); the
   letter-by-letter translator never reached them.
-- `privacy.css` and `terms-and-condition.css` are near-identical twins (~900
-  lines each) and are the obvious next cleanup.
+- The Japanese sign images are still around 500 KB each, even after lossless
+  recompression. Getting further means converting them to WebP, which changes
+  their URLs and so is an SEO decision rather than a build-time one.
+- The word dictionary covers 43 signs. Everything else fingerspells. Adding a
+  video or an image to `tools/gen-dictionary.cjs` is all it takes to grow it —
+  see the licence table above before sourcing anything externally.
+- There is no Twitter entry in `src/data/social.ts`, though `src/lib/site.ts`
+  names a handle. The contact page therefore links LinkedIn, GitHub and
+  Instagram only.
