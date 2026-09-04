@@ -73,7 +73,7 @@ export default function BritishSignLanguagePage() {
           , most commonly known as BSL, is the primary sign language used within the Deaf community in the United Kingdom. It is a rich, expressive, and visually structured language that allows people to communicate through hand movements, facial expressions, gestures, and body language.
 Unlike many people assume, BSL is not a signed version of English. It has its own grammar, structure, vocabulary, and linguistic identity, just like spoken languages.
 BSL is more than communication. For many Deaf individuals, it represents culture, identity, and community.
-          <img src="/british-sign-language/british-sign-language-alphabet.webp" alt="British sign language Alphabet" />
+          <img src="/british-sign-language/british-sign-language-alphabet.webp" alt="British sign language Alphabet" width={921} height={555} decoding="async" />
         </p>
         <p>
           British Sign Language is an independent visual language used by tens of thousands of people across the UK. It relies on the following elements:
@@ -143,157 +143,157 @@ BSL is more than communication. For many Deaf individuals, it represents culture
           <h3>
             A in BSL sign language
           </h3>
-          <img src="/british-sign-language/ba.png" alt="A in sign language" />
+          <img src="/british-sign-language/ba.png" alt="A in sign language" width={164} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             B in BSL sign language
           </h3>
-          <img src="/british-sign-language/bb.png" alt="B in sign language" />
+          <img src="/british-sign-language/bb.png" alt="B in sign language" width={179} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             C BSL in sign language
           </h3>
-          <img src="/british-sign-language/bc.png" alt="C in sign language" />
+          <img src="/british-sign-language/bc.png" alt="C in sign language" width={166} height={138} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             D BSL in sign language
           </h3>
-          <img src="/british-sign-language/bd.png" alt="D in sign language" />
+          <img src="/british-sign-language/bd.png" alt="D in sign language" width={150} height={135} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             E in sign language
           </h3>
-          <img src="/british-sign-language/be.png" alt="E in sign language" />
+          <img src="/british-sign-language/be.png" alt="E in sign language" width={156} height={140} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             f in sign language
           </h3>
-          <img src="/british-sign-language/bf.png" alt="F in sign language" />
+          <img src="/british-sign-language/bf.png" alt="F in sign language" width={150} height={126} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             G in sign language
           </h3>
-          <img src="/british-sign-language/bg.png" alt="G in sign language" />
+          <img src="/british-sign-language/bg.png" alt="G in sign language" width={152} height={123} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             H in sign language
           </h3>
-          <img src="/british-sign-language/bh.png" alt="H in sign language" />
+          <img src="/british-sign-language/bh.png" alt="H in sign language" width={146} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             I in sign language
           </h3>
-          <img src="/british-sign-language/bi.png" alt="I in sign language" />
+          <img src="/british-sign-language/bi.png" alt="I in sign language" width={169} height={137} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             J in sign language
           </h3>
-          <img src="/british-sign-language/bj.png" alt="J in sign language" />
+          <img src="/british-sign-language/bj.png" alt="J in sign language" width={166} height={136} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             K in sign language
           </h3>
-          <img src="/british-sign-language/bk.png" alt="k in sign language" />
+          <img src="/british-sign-language/bk.png" alt="k in sign language" width={151} height={143} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             L in sign language
           </h3>
-          <img src="/british-sign-language/bl.png" alt="L in sign language" />
+          <img src="/british-sign-language/bl.png" alt="L in sign language" width={157} height={140} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             M in sign language
           </h3>
-          <img src="/british-sign-language/bm.png" alt="M in sign language" />
+          <img src="/british-sign-language/bm.png" alt="M in sign language" width={141} height={129} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             N in sign language
           </h3>
-          <img src="/british-sign-language/bn.png" alt="N in sign language" />
+          <img src="/british-sign-language/bn.png" alt="N in sign language" width={159} height={139} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             O in sign language
           </h3>
-          <img src="/british-sign-language/bo.png" alt="O in sign language" />
+          <img src="/british-sign-language/bo.png" alt="O in sign language" width={167} height={142} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             P in sign language
           </h3>
-          <img src="/british-sign-language/bp.png" alt="p in sign language" />
+          <img src="/british-sign-language/bp.png" alt="p in sign language" width={150} height={135} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Q in sign language
           </h3>
-          <img src="/british-sign-language/bq.png" alt="Q in sign language" />
+          <img src="/british-sign-language/bq.png" alt="Q in sign language" width={160} height={124} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             R in sign language
           </h3>
-          <img src="/british-sign-language/br.png" alt="r in sign language" />
+          <img src="/british-sign-language/br.png" alt="r in sign language" width={153} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             S in sign language
           </h3>
-          <img src="/british-sign-language/bs.png" alt="S in sign language" />
+          <img src="/british-sign-language/bs.png" alt="S in sign language" width={142} height={131} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             T in sign language
           </h3>
-          <img src="/british-sign-language/bt.png" alt="t in sign language" />
+          <img src="/british-sign-language/bt.png" alt="t in sign language" width={154} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             U in sign language
           </h3>
-          <img src="/british-sign-language/bu.png" alt="U in sign language" />
+          <img src="/british-sign-language/bu.png" alt="U in sign language" width={162} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             V in sign language
           </h3>
-          <img src="/british-sign-language/bv.png" alt="v in sign language" />
+          <img src="/british-sign-language/bv.png" alt="v in sign language" width={150} height={132} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             W in sign language
           </h3>
-          <img src="/british-sign-language/bw.png" alt="W in sign language" />
+          <img src="/british-sign-language/bw.png" alt="W in sign language" width={155} height={132} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             X in sign language
           </h3>
-          <img src="/british-sign-language/bx.png" alt="X in sign language" />
+          <img src="/british-sign-language/bx.png" alt="X in sign language" width={152} height={138} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Y in sign language
           </h3>
-          <img src="/british-sign-language/by.png" alt="Y in sign language" />
+          <img src="/british-sign-language/by.png" alt="Y in sign language" width={145} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Z in sign language
           </h3>
-          <img src="/british-sign-language/bz.png" alt="z in sign language" />
+          <img src="/british-sign-language/bz.png" alt="z in sign language" width={153} height={122} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="bsl-section">

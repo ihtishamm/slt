@@ -208,7 +208,7 @@ export default function SignLanguageAlphabetPage() {
             <h2>
               American Sign Language Alphabets
             </h2>
-            <img src="/sign-language-alphabet/american-sign-language-alphabet.png" alt="Chart of American Sign Language Alphabet" />
+            <img src="/sign-language-alphabet/american-sign-language-alphabet.png" alt="Chart of American Sign Language Alphabet" width={867} height={511} decoding="async" />
             <p>
               The
               <strong>
@@ -227,7 +227,7 @@ export default function SignLanguageAlphabetPage() {
             <h2>
               Spanish Sign Language (LSE) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/spanish-sign-language-alphabet.png" alt="Spanish Sign Language Alphabet Chart" />
+            <img src="/sign-language-alphabet/spanish-sign-language-alphabet.png" alt="Spanish Sign Language Alphabet Chart" width={753} height={569} loading="lazy" decoding="async" />
             <p>
               <strong>
                 Lengua de Signos Española (LSE)
@@ -245,7 +245,7 @@ The LSE alphabet is one-handed, and it’s used for fingerspelling names, locati
             <h2>
               Chinese Sign Language (CSL) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/chinese-sign-language-alphabet.png" alt="Chinese Sign Language Fingerspelling Chart" />
+            <img src="/sign-language-alphabet/chinese-sign-language-alphabet.png" alt="Chinese Sign Language Fingerspelling Chart" width={712} height={502} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/chinese-sign-language">
@@ -258,7 +258,7 @@ CSL is not simply a signed version of Mandarin. It has its own grammar, expressi
             <h2>
               Mexican Sign Language (LSM) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/mexian-sign-language-alphabet.png" alt="Mexican Sign Language Alphabet" />
+            <img src="/sign-language-alphabet/mexian-sign-language-alphabet.png" alt="Mexican Sign Language Alphabet" width={842} height={462} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/mexican-sign-language">
@@ -274,7 +274,7 @@ The LSM alphabet is one-handed, like ASL, and is used to spell names, places, an
             <h2>
               British Sign Language (BSL) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/british-sign-language-alphabet.png" alt="British Sign Language Alphabet with Two Hands" />
+            <img src="/sign-language-alphabet/british-sign-language-alphabet.png" alt="British Sign Language Alphabet with Two Hands" width={921} height={555} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/british-sign-language">
@@ -287,7 +287,7 @@ BSL is a language in its own right, with a structure, vocabulary, and syntax not
             <h2>
               Australian Sign Language (Auslan) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/british-sign-language-alphabet.png" alt="Australian Sign Language Alphabet Chart" />
+            <img src="/sign-language-alphabet/british-sign-language-alphabet.png" alt="Australian Sign Language Alphabet Chart" width={921} height={555} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/australian-sign-language">
@@ -303,7 +303,7 @@ The Auslan alphabet is used for names, places, brands, technical words, and when
             <h2>
               Japanese Sign Language (JSL) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/japanese-sign-language-alphabet.png" alt="Japanese Sign Language Syllabary Chart" />
+            <img src="/sign-language-alphabet/japanese-sign-language-alphabet.png" alt="Japanese Sign Language Syllabary Chart" width={428} height={639} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/japanese-sign-language">
@@ -319,7 +319,7 @@ The uniqueness, expressiveness, and deep relationship with Japanese linguistic s
             <h2>
               French Sign Language (LSF) Alphabet
             </h2>
-            <img src="/sign-language-alphabet/french-sign-language-alphabet.png" alt="French Sign Language Alphabet Chart" />
+            <img src="/sign-language-alphabet/french-sign-language-alphabet.png" alt="French Sign Language Alphabet Chart" width={451} height={633} loading="lazy" decoding="async" />
             <p>
               <strong>
                 <Link href="/french-sign-language">
@@ -335,7 +335,7 @@ The LSF alphabet is mainly used for names, places, technical terms, and borrowed
             <h2>
               Arabic Sign Language Alphabet
             </h2>
-            <img src="/sign-language-alphabet/arabicalphabets.webp" alt="Arabic Sign Language Alphabet Chart" />
+            <img src="/sign-language-alphabet/arabicalphabets.webp" alt="Arabic Sign Language Alphabet Chart" width={780} height={682} loading="lazy" decoding="async" />
             <p>
               It is known as Arabic Sign Language in several countries of the Middle East and North Africa: Saudi Arabia, the UAE, Jordan, Egypt, Kuwait, and others. Though it may have local peculiarities, it also has a standardized fingerspelling system devised to facilitate communication in everyday contexts, provide education, and thus support Deaf communities throughout the Arabic-speaking world.
 

@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Translator from "@/components/translator/Translator";
 import JsonLd from "@/components/seo/JsonLd";
+import "@/styles/alphabet-page.css";
 import "@/styles/german-sign-language.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -75,164 +76,164 @@ export default function GermanSignLanguagePage() {
           </Link>
           , called "Fingeralphabet" in German. This alphabet comes from the French sign alphabet from the 1700s and is similar to other sign alphabets used in Europe and North America. Now, check below the list of all German  Alphabet signs.
         </p>
-        <img src="/german-sign-language/german-sign-language.png" alt="German Sign Language Alphabet" />
+        <img src="/german-sign-language/german-sign-language.png" alt="German Sign Language Alphabet" width={823} height={628} decoding="async" />
       </div>
       <div className="alphabet-grid">
         <div className="alphabet-card">
           <h3>
             A in sign language
           </h3>
-          <img src="/german-sign-language/GA.png" alt="A in sign language" />
+          <img src="/german-sign-language/GA.png" alt="A in sign language" width={80} height={111} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             B in sign language
           </h3>
-          <img src="/german-sign-language/GB.png" alt="B in sign language" />
+          <img src="/german-sign-language/GB.png" alt="B in sign language" width={66} height={105} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             C in sign language
           </h3>
-          <img src="/german-sign-language/GC.png" alt="C in sign language" />
+          <img src="/german-sign-language/GC.png" alt="C in sign language" width={82} height={108} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             D in sign language
           </h3>
-          <img src="/german-sign-language/GD.png" alt="D in sign language" />
+          <img src="/german-sign-language/GD.png" alt="D in sign language" width={76} height={109} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             E in sign language
           </h3>
-          <img src="/german-sign-language/GE.png" alt="E in sign language" />
+          <img src="/german-sign-language/GE.png" alt="E in sign language" width={92} height={106} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             f in sign language
           </h3>
-          <img src="/german-sign-language/GF.png" alt="F in sign language" />
+          <img src="/german-sign-language/GF.png" alt="F in sign language" width={89} height={110} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             G in sign language
           </h3>
-          <img src="/german-sign-language/GG.png" alt="G in sign language" />
+          <img src="/german-sign-language/GG.png" alt="G in sign language" width={91} height={98} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             H in sign language
           </h3>
-          <img src="/german-sign-language/GH.png" alt="H in sign language" />
+          <img src="/german-sign-language/GH.png" alt="H in sign language" width={99} height={96} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             I in sign language
           </h3>
-          <img src="/german-sign-language/GI.png" alt="I in sign language" />
+          <img src="/german-sign-language/GI.png" alt="I in sign language" width={76} height={114} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             J in sign language
           </h3>
-          <img src="/german-sign-language/GJ.png" alt="J in sign language" />
+          <img src="/german-sign-language/GJ.png" alt="J in sign language" width={87} height={105} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             K in sign language
           </h3>
-          <img src="/german-sign-language/GK.png" alt="k in sign language" />
+          <img src="/german-sign-language/GK.png" alt="k in sign language" width={76} height={121} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             L in sign language
           </h3>
-          <img src="/german-sign-language/GL.png" alt="L in sign language" />
+          <img src="/german-sign-language/GL.png" alt="L in sign language" width={99} height={119} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             M in sign language
           </h3>
-          <img src="/german-sign-language/GM.png" alt="M in sign language" />
+          <img src="/german-sign-language/GM.png" alt="M in sign language" width={98} height={110} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             N in sign language
           </h3>
-          <img src="/german-sign-language/GN.png" alt="N in sign language" />
+          <img src="/german-sign-language/GN.png" alt="N in sign language" width={91} height={111} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             O in sign language
           </h3>
-          <img src="/german-sign-language/GO.png" alt="O in sign language" />
+          <img src="/german-sign-language/GO.png" alt="O in sign language" width={83} height={113} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             P in sign language
           </h3>
-          <img src="/german-sign-language/GP.png" alt="p in sign language" />
+          <img src="/german-sign-language/GP.png" alt="p in sign language" width={107} height={103} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Q in sign language
           </h3>
-          <img src="/german-sign-language/GQ.png" alt="Q in sign language" />
+          <img src="/german-sign-language/GQ.png" alt="Q in sign language" width={106} height={96} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             R in sign language
           </h3>
-          <img src="/german-sign-language/GR.png" alt="r in sign language" />
+          <img src="/german-sign-language/GR.png" alt="r in sign language" width={79} height={119} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             S in sign language
           </h3>
-          <img src="/german-sign-language/GS.png" alt="S in sign language" />
+          <img src="/german-sign-language/GS.png" alt="S in sign language" width={109} height={114} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             T in sign language
           </h3>
-          <img src="/german-sign-language/GT.png" alt="t in sign language" />
+          <img src="/german-sign-language/GT.png" alt="t in sign language" width={94} height={103} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             U in sign language
           </h3>
-          <img src="/german-sign-language/GU.png" alt="U in sign language" />
+          <img src="/german-sign-language/GU.png" alt="U in sign language" width={96} height={120} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             V in sign language
           </h3>
-          <img src="/german-sign-language/GV.png" alt="v in sign language" />
+          <img src="/german-sign-language/GV.png" alt="v in sign language" width={98} height={131} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             W in sign language
           </h3>
-          <img src="/german-sign-language/GW.png" alt="W in sign language" />
+          <img src="/german-sign-language/GW.png" alt="W in sign language" width={92} height={115} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             X in sign language
           </h3>
-          <img src="/german-sign-language/GX.png" alt="X in sign language" />
+          <img src="/german-sign-language/GX.png" alt="X in sign language" width={109} height={123} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Y in sign language
           </h3>
-          <img src="/german-sign-language/GY.png" alt="Y in sign language" />
+          <img src="/german-sign-language/GY.png" alt="Y in sign language" width={108} height={118} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Z in sign language
           </h3>
-          <img src="/german-sign-language/GZ.png" alt="z in sign language" />
+          <img src="/german-sign-language/GZ.png" alt="z in sign language" width={94} height={121} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="dgs-container">

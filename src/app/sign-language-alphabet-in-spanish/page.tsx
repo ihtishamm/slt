@@ -22,7 +22,7 @@ export default function SignLanguageAlphabetInSpanishPage() {
         <h1>
           Complete Guide to the Sign Language Alphabet in Spanish
         </h1>
-        <img src="/spanish-sign-language/spanish-sign-language-alphabet.png" alt=" Sign Language Alphabet in Spanish" />
+        <img src="/spanish-sign-language/spanish-sign-language-alphabet.png" alt=" Sign Language Alphabet in Spanish" width={753} height={569} decoding="async" />
         <div className="intro">
           <p>
             Understanding the Spanish Sign Language alphabet is an essential step toward inclusive communication for the deaf and hard-of-hearing community in Spanish-speaking countries. Known as the

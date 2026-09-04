@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div className="about-content">
               <div className="profile animate animate-delay-1">
                 <div className="profile-image">
-                  <img src="/assets/images/abdul-razzaq.png" alt="Abdul Razzaq" />
+                  <img src="/assets/images/abdul-razzaq.png" alt="Abdul Razzaq" width={380} height={503} decoding="async" />
                 </div>
               </div>
               <div className="intro animate animate-delay-2">

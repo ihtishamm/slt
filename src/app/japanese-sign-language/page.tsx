@@ -79,7 +79,7 @@ export default function JapaneseSignLanguagePage() {
           </div>
           <div className="gallery">
             <div className="sign-card">
-              <img src="/japanese-sign-language/hello.png" alt="Hello in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/hello.png" alt="Hello in Japanese Sign Language" className="sign-image" width={515} height={513} decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   こんにちは (Hello)
@@ -90,7 +90,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/thankyou.png" alt="Thank you in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/thankyou.png" alt="Thank you in Japanese Sign Language" className="sign-image" width={507} height={505} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   ありがとう (Thank you)
@@ -101,7 +101,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/yes.png" alt="Yes in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/yes.png" alt="Yes in Japanese Sign Language" className="sign-image" width={501} height={507} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   はい (Yes)
@@ -112,7 +112,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/no.png" alt="No in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/no.png" alt="No in Japanese Sign Language" className="sign-image" width={510} height={508} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   いいえ (No)
@@ -123,7 +123,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/please.png" alt="Please in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/please.png" alt="Please in Japanese Sign Language" className="sign-image" width={506} height={506} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   お願いします (Please)
@@ -134,7 +134,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/name.png" alt="Name in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/name.png" alt="Name in Japanese Sign Language" className="sign-image" width={511} height={509} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   名前 (Name)
@@ -145,7 +145,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/food.png" alt="Food in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/food.png" alt="Food in Japanese Sign Language" className="sign-image" width={510} height={511} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   食べ物 (Food)
@@ -156,7 +156,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/water.png" alt="Water in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/water.png" alt="Water in Japanese Sign Language" className="sign-image" width={507} height={505} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   水 (Water)
@@ -167,7 +167,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/family.png" alt="Family in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/family.png" alt="Family in Japanese Sign Language" className="sign-image" width={508} height={506} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   家族 (Family)
@@ -178,7 +178,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/friend.png" alt="Friend in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/friend.png" alt="Friend in Japanese Sign Language" className="sign-image" width={512} height={501} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   友達 (Friend)
@@ -189,7 +189,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/work.png" alt="Work in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/work.png" alt="Work in Japanese Sign Language" className="sign-image" width={503} height={507} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   仕事 (Work)
@@ -200,7 +200,7 @@ export default function JapaneseSignLanguagePage() {
               </div>
             </div>
             <div className="sign-card">
-              <img src="/japanese-sign-language/school.png" alt="School in Japanese Sign Language" className="sign-image" />
+              <img src="/japanese-sign-language/school.png" alt="School in Japanese Sign Language" className="sign-image" width={507} height={501} loading="lazy" decoding="async" />
               <div className="sign-info">
                 <div className="sign-name">
                   学校 (School)
@@ -230,271 +230,271 @@ export default function JapaneseSignLanguagePage() {
               <h3>
                 あ in sign language
               </h3>
-              <img src="/japanese-sign-language/あ.png" alt="あ in sign language" />
+              <img src="/japanese-sign-language/あ.png" alt="あ in sign language" width={95} height={91} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 あ in sign language
               </h3>
-              <img src="/japanese-sign-language/あ.png" alt="あ in sign language" />
+              <img src="/japanese-sign-language/あ.png" alt="あ in sign language" width={95} height={91} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 う in sign language
               </h3>
-              <img src="/japanese-sign-language/う.png" alt="う in sign language" />
+              <img src="/japanese-sign-language/う.png" alt="う in sign language" width={94} height={94} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 え in sign language
               </h3>
-              <img src="/japanese-sign-language/え.png" alt="え in sign language" />
+              <img src="/japanese-sign-language/え.png" alt="え in sign language" width={96} height={86} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 お in sign language
               </h3>
-              <img src="/japanese-sign-language/お.png" alt="お in sign language" />
+              <img src="/japanese-sign-language/お.png" alt="お in sign language" width={94} height={89} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 か in sign language
               </h3>
-              <img src="/japanese-sign-language/か.png" alt="か in sign language" />
+              <img src="/japanese-sign-language/か.png" alt="か in sign language" width={103} height={102} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 き in sign language
               </h3>
-              <img src="/japanese-sign-language/き.png" alt="き in sign language" />
+              <img src="/japanese-sign-language/き.png" alt="き in sign language" width={94} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 く in sign language
               </h3>
-              <img src="/japanese-sign-language/く.png" alt="く in sign language" />
+              <img src="/japanese-sign-language/く.png" alt="く in sign language" width={100} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 け in sign language
               </h3>
-              <img src="/japanese-sign-language/け.png" alt="け in sign language" />
+              <img src="/japanese-sign-language/け.png" alt="け in sign language" width={88} height={91} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 こ in sign language
               </h3>
-              <img src="/japanese-sign-language/こ.png" alt="こ in sign language" />
+              <img src="/japanese-sign-language/こ.png" alt="こ in sign language" width={93} height={88} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 さ in sign language
               </h3>
-              <img src="/japanese-sign-language/さ.png" alt="さ in sign language" />
+              <img src="/japanese-sign-language/さ.png" alt="さ in sign language" width={88} height={89} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 し in sign language
               </h3>
-              <img src="/japanese-sign-language/し.png" alt="し in sign language" />
+              <img src="/japanese-sign-language/し.png" alt="し in sign language" width={93} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 す in sign language
               </h3>
-              <img src="/japanese-sign-language/す.png" alt="す in sign language" />
+              <img src="/japanese-sign-language/す.png" alt="す in sign language" width={91} height={87} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 せ in sign language
               </h3>
-              <img src="/japanese-sign-language/せ.png" alt="せ in sign language" />
+              <img src="/japanese-sign-language/せ.png" alt="せ in sign language" width={98} height={93} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 そ in sign language
               </h3>
-              <img src="/japanese-sign-language/そ.png" alt="そ in sign language" />
+              <img src="/japanese-sign-language/そ.png" alt="そ in sign language" width={93} height={91} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 P in sign language
               </h3>
-              <img src="/japanese-sign-language/た.png" alt="た in sign language" />
+              <img src="/japanese-sign-language/た.png" alt="た in sign language" width={89} height={85} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ち in sign language
               </h3>
-              <img src="/japanese-sign-language/ち.png" alt="ち in sign language" />
+              <img src="/japanese-sign-language/ち.png" alt="ち in sign language" width={96} height={93} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 つ in sign language
               </h3>
-              <img src="/japanese-sign-language/つ.png" alt="つ in sign language" />
+              <img src="/japanese-sign-language/つ.png" alt="つ in sign language" width={91} height={94} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 て in sign language
               </h3>
-              <img src="/japanese-sign-language/て.png" alt="て in sign language" />
+              <img src="/japanese-sign-language/て.png" alt="て in sign language" width={92} height={92} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 と in sign language
               </h3>
-              <img src="/japanese-sign-language/と.png" alt="と in sign language" />
+              <img src="/japanese-sign-language/と.png" alt="と in sign language" width={87} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 な in sign language
               </h3>
-              <img src="/japanese-sign-language/な.png" alt="な in sign language" />
+              <img src="/japanese-sign-language/な.png" alt="な in sign language" width={99} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 に in sign language
               </h3>
-              <img src="/japanese-sign-language/に.png" alt="に in sign language" />
+              <img src="/japanese-sign-language/に.png" alt="に in sign language" width={95} height={86} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ぬ in sign language
               </h3>
-              <img src="/japanese-sign-language/ぬ.png" alt="ぬ in sign language" />
+              <img src="/japanese-sign-language/ぬ.png" alt="ぬ in sign language" width={112} height={102} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 の in sign language
               </h3>
-              <img src="/japanese-sign-language/の.png" alt="の in sign language" />
+              <img src="/japanese-sign-language/の.png" alt="の in sign language" width={108} height={97} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 は in sign language
               </h3>
-              <img src="/japanese-sign-language/は.png" alt="は in sign language" />
+              <img src="/japanese-sign-language/は.png" alt="は in sign language" width={104} height={76} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ひ in sign language
               </h3>
-              <img src="/japanese-sign-language/ひ.png" alt="ひ in sign language" />
+              <img src="/japanese-sign-language/ひ.png" alt="ひ in sign language" width={95} height={103} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ふ in sign language
               </h3>
-              <img src="/japanese-sign-language/ふ.png" alt="ふ in sign language" />
+              <img src="/japanese-sign-language/ふ.png" alt="ふ in sign language" width={98} height={101} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 へ in sign language
               </h3>
-              <img src="/japanese-sign-language/へ.png" alt="へ in sign language" />
+              <img src="/japanese-sign-language/へ.png" alt="へ in sign language" width={100} height={100} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ほ in sign language
               </h3>
-              <img src="/japanese-sign-language/ほ.png" alt="ほ in sign language" />
+              <img src="/japanese-sign-language/ほ.png" alt="ほ in sign language" width={104} height={98} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ま in sign language
               </h3>
-              <img src="/japanese-sign-language/ま.png" alt="ま in sign language" />
+              <img src="/japanese-sign-language/ま.png" alt="ま in sign language" width={107} height={104} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 み in sign language
               </h3>
-              <img src="/japanese-sign-language/み.png" alt="み in sign language" />
+              <img src="/japanese-sign-language/み.png" alt="み in sign language" width={104} height={93} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 む in sign language
               </h3>
-              <img src="/japanese-sign-language/む.png" alt="む in sign language" />
+              <img src="/japanese-sign-language/む.png" alt="む in sign language" width={99} height={98} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 め in sign language
               </h3>
-              <img src="/japanese-sign-language/め.png" alt="め in sign language" />
+              <img src="/japanese-sign-language/め.png" alt="め in sign language" width={103} height={99} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 も in sign language
               </h3>
-              <img src="/japanese-sign-language/も.png" alt="も in sign language" />
+              <img src="/japanese-sign-language/も.png" alt="も in sign language" width={99} height={107} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 や in sign language
               </h3>
-              <img src="/japanese-sign-language/や.png" alt="や in sign language" />
+              <img src="/japanese-sign-language/や.png" alt="や in sign language" width={99} height={97} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ゆ in sign language
               </h3>
-              <img src="/japanese-sign-language/ゆ.png" alt="ゆ in sign language" />
+              <img src="/japanese-sign-language/ゆ.png" alt="ゆ in sign language" width={81} height={86} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 よ in sign language
               </h3>
-              <img src="/japanese-sign-language/よ.png" alt="よ in sign language" />
+              <img src="/japanese-sign-language/よ.png" alt="よ in sign language" width={104} height={62} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ら in sign language
               </h3>
-              <img src="/japanese-sign-language/ら.png" alt="ら in sign language" />
+              <img src="/japanese-sign-language/ら.png" alt="ら in sign language" width={84} height={85} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 り in sign language
               </h3>
-              <img src="/japanese-sign-language/り.png" alt="り in sign language" />
+              <img src="/japanese-sign-language/り.png" alt="り in sign language" width={95} height={88} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 る in sign language
               </h3>
-              <img src="/japanese-sign-language/る.png" alt="る in sign language" />
+              <img src="/japanese-sign-language/る.png" alt="る in sign language" width={75} height={86} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 れ in sign language
               </h3>
-              <img src="/japanese-sign-language/れ.png" alt="れ in sign language" />
+              <img src="/japanese-sign-language/れ.png" alt="れ in sign language" width={78} height={81} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ろ in sign language
               </h3>
-              <img src="/japanese-sign-language/ろ.png" alt="ろ in sign language" />
+              <img src="/japanese-sign-language/ろ.png" alt="ろ in sign language" width={76} height={90} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 わ in sign language
               </h3>
-              <img src="/japanese-sign-language/わ.png" alt="わ in sign language" />
+              <img src="/japanese-sign-language/わ.png" alt="わ in sign language" width={90} height={82} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 を in sign language
               </h3>
-              <img src="/japanese-sign-language/を.png" alt="を in sign language" />
+              <img src="/japanese-sign-language/を.png" alt="を in sign language" width={79} height={77} loading="lazy" decoding="async" />
             </div>
             <div className="alphabet-card">
               <h3>
                 ん in sign language
               </h3>
-              <img src="/japanese-sign-language/ん.png" alt="ん in sign language" />
+              <img src="/japanese-sign-language/ん.png" alt="ん in sign language" width={103} height={67} loading="lazy" decoding="async" />
             </div>
           </div>
         </section>

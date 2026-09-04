@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Translator from "@/components/translator/Translator";
 import JsonLd from "@/components/seo/JsonLd";
+import "@/styles/alphabet-page.css";
 import "@/styles/australian-sign-language.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -65,7 +66,7 @@ export default function AustralianSignLanguagePage() {
         <h2>
           Australian Sign Language Alphabet
         </h2>
-        <img src="/australian-sign-language/auslan.png" alt="auslan in sign language" />
+        <img src="/australian-sign-language/auslan.png" alt="auslan in sign language" width={548} height={633} decoding="async" />
         <p>
           Auslan is the
           <Link href="/">
@@ -83,217 +84,217 @@ export default function AustralianSignLanguagePage() {
           <h3>
             A
           </h3>
-          <img src="/australian-sign-language/ba.png" alt="A in sign language" />
+          <img src="/australian-sign-language/ba.png" alt="A in sign language" width={164} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             B
           </h3>
-          <img src="/australian-sign-language/bb.png" alt="B in sign language" />
+          <img src="/australian-sign-language/bb.png" alt="B in sign language" width={179} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             C
           </h3>
-          <img src="/australian-sign-language/bc.png" alt="C in sign language" />
+          <img src="/australian-sign-language/bc.png" alt="C in sign language" width={166} height={138} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             D
           </h3>
-          <img src="/australian-sign-language/bd.png" alt="D in sign language" />
+          <img src="/australian-sign-language/bd.png" alt="D in sign language" width={150} height={135} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             E
           </h3>
-          <img src="/australian-sign-language/be.png" alt="E in sign language" />
+          <img src="/australian-sign-language/be.png" alt="E in sign language" width={156} height={140} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             F
           </h3>
-          <img src="/australian-sign-language/bf.png" alt="F in sign language" />
+          <img src="/australian-sign-language/bf.png" alt="F in sign language" width={150} height={126} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             G
           </h3>
-          <img src="/australian-sign-language/bg.png" alt="G in sign language" />
+          <img src="/australian-sign-language/bg.png" alt="G in sign language" width={152} height={123} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             H
           </h3>
-          <img src="/australian-sign-language/bh.png" alt="H in sign language" />
+          <img src="/australian-sign-language/bh.png" alt="H in sign language" width={146} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             I
           </h3>
-          <img src="/australian-sign-language/bi.png" alt="I in sign language" />
+          <img src="/australian-sign-language/bi.png" alt="I in sign language" width={169} height={137} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             J
           </h3>
-          <img src="/australian-sign-language/bj.png" alt="J in sign language" />
+          <img src="/australian-sign-language/bj.png" alt="J in sign language" width={166} height={136} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             K
           </h3>
-          <img src="/australian-sign-language/bk.png" alt="K in sign language" />
+          <img src="/australian-sign-language/bk.png" alt="K in sign language" width={151} height={143} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             L
           </h3>
-          <img src="/australian-sign-language/bl.png" alt="L in sign language" />
+          <img src="/australian-sign-language/bl.png" alt="L in sign language" width={157} height={140} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             M
           </h3>
-          <img src="/australian-sign-language/bm.png" alt="M in sign language" />
+          <img src="/australian-sign-language/bm.png" alt="M in sign language" width={141} height={129} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             N
           </h3>
-          <img src="/australian-sign-language/bn.png" alt="N in sign language" />
+          <img src="/australian-sign-language/bn.png" alt="N in sign language" width={159} height={139} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             O
           </h3>
-          <img src="/australian-sign-language/bo.png" alt="O in sign language" />
+          <img src="/australian-sign-language/bo.png" alt="O in sign language" width={167} height={142} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             P
           </h3>
-          <img src="/australian-sign-language/bp.png" alt="P in sign language" />
+          <img src="/australian-sign-language/bp.png" alt="P in sign language" width={150} height={135} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Q
           </h3>
-          <img src="/australian-sign-language/bq.png" alt="Q in sign language" />
+          <img src="/australian-sign-language/bq.png" alt="Q in sign language" width={160} height={124} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             R
           </h3>
-          <img src="/australian-sign-language/br.png" alt="R in sign language" />
+          <img src="/australian-sign-language/br.png" alt="R in sign language" width={153} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             S
           </h3>
-          <img src="/australian-sign-language/bs.png" alt="S in sign language" />
+          <img src="/australian-sign-language/bs.png" alt="S in sign language" width={142} height={131} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             T
           </h3>
-          <img src="/australian-sign-language/bt.png" alt="T in sign language" />
+          <img src="/australian-sign-language/bt.png" alt="T in sign language" width={154} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             U
           </h3>
-          <img src="/australian-sign-language/bu.png" alt="U in sign language" />
+          <img src="/australian-sign-language/bu.png" alt="U in sign language" width={162} height={134} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             V
           </h3>
-          <img src="/australian-sign-language/bv.png" alt="V in sign language" />
+          <img src="/australian-sign-language/bv.png" alt="V in sign language" width={150} height={132} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             W
           </h3>
-          <img src="/australian-sign-language/bw.png" alt="W in sign language" />
+          <img src="/australian-sign-language/bw.png" alt="W in sign language" width={155} height={132} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             X
           </h3>
-          <img src="/australian-sign-language/bx.png" alt="X in sign language" />
+          <img src="/australian-sign-language/bx.png" alt="X in sign language" width={152} height={138} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Y
           </h3>
-          <img src="/australian-sign-language/by.png" alt="Y in sign language" />
+          <img src="/australian-sign-language/by.png" alt="Y in sign language" width={145} height={133} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Z
           </h3>
-          <img src="/australian-sign-language/bz.png" alt="Z in sign language" />
+          <img src="/australian-sign-language/bz.png" alt="Z in sign language" width={153} height={122} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             0
           </h3>
-          <img src="/australian-sign-language/b0.png" alt="0 in sign language" />
+          <img src="/australian-sign-language/b0.png" alt="0 in sign language" width={105} height={130} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             1
           </h3>
-          <img src="/australian-sign-language/b1.png" alt="1 in sign language" />
+          <img src="/australian-sign-language/b1.png" alt="1 in sign language" width={95} height={155} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             2
           </h3>
-          <img src="/australian-sign-language/b2.png" alt="2 in sign language" />
+          <img src="/australian-sign-language/b2.png" alt="2 in sign language" width={99} height={153} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             3
           </h3>
-          <img src="/australian-sign-language/b3.png" alt="3 in sign language" />
+          <img src="/australian-sign-language/b3.png" alt="3 in sign language" width={98} height={167} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             4
           </h3>
-          <img src="/australian-sign-language/b4.png" alt="4 in sign language" />
+          <img src="/australian-sign-language/b4.png" alt="4 in sign language" width={95} height={159} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             5
           </h3>
-          <img src="/australian-sign-language/b5.png" alt="5 in sign language" />
+          <img src="/australian-sign-language/b5.png" alt="5 in sign language" width={102} height={129} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             6
           </h3>
-          <img src="/australian-sign-language/b6.png" alt="6 in sign language" />
+          <img src="/australian-sign-language/b6.png" alt="6 in sign language" width={97} height={125} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             7
           </h3>
-          <img src="/australian-sign-language/b7.png" alt="7 in sign language" />
+          <img src="/australian-sign-language/b7.png" alt="7 in sign language" width={102} height={113} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             8
           </h3>
-          <img src="/australian-sign-language/b8.png" alt="8 in sign language" />
+          <img src="/australian-sign-language/b8.png" alt="8 in sign language" width={98} height={124} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             9
           </h3>
-          <img src="/australian-sign-language/b9.png" alt="9 in sign language" />
+          <img src="/australian-sign-language/b9.png" alt="9 in sign language" width={94} height={109} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="auslan-content">

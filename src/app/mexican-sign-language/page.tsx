@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Translator from "@/components/translator/Translator";
 import JsonLd from "@/components/seo/JsonLd";
+import "@/styles/alphabet-page.css";
 import "@/styles/mexican-sign-language.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -79,164 +80,164 @@ export default function MexicanSignLanguagePage() {
           </Link>
           . It is a visual language expressed with the hands, face, and body, with its own distinct history, community, and culture. Get the below chart of Mexican Sign Language.
         </p>
-        <img src="/mexican-sign-language/mexian-sign-language-alphabet.webp" alt="Mexican Sign Language Alphabet" />
+        <img src="/mexican-sign-language/mexian-sign-language-alphabet.webp" alt="Mexican Sign Language Alphabet" width={842} height={462} decoding="async" />
       </div>
       <div className="alphabet-grid">
         <div className="alphabet-card">
           <h3>
             A in sign language
           </h3>
-          <img src="/mexican-sign-language/ma.png" alt="A in sign language" />
+          <img src="/mexican-sign-language/ma.png" alt="A in sign language" width={85} height={73} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             B in sign language
           </h3>
-          <img src="/mexican-sign-language/mb.png" alt="B in sign language" />
+          <img src="/mexican-sign-language/mb.png" alt="B in sign language" width={61} height={101} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             C in sign language
           </h3>
-          <img src="/mexican-sign-language/mc.png" alt="C in sign language" />
+          <img src="/mexican-sign-language/mc.png" alt="C in sign language" width={66} height={76} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             D in sign language
           </h3>
-          <img src="/mexican-sign-language/md.png" alt="D in sign language" />
+          <img src="/mexican-sign-language/md.png" alt="D in sign language" width={57} height={95} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             E in sign language
           </h3>
-          <img src="/mexican-sign-language/me.png" alt="E in sign language" />
+          <img src="/mexican-sign-language/me.png" alt="E in sign language" width={54} height={74} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             f in sign language
           </h3>
-          <img src="/mexican-sign-language/mf.png" alt="F in sign language" />
+          <img src="/mexican-sign-language/mf.png" alt="F in sign language" width={60} height={102} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             G in sign language
           </h3>
-          <img src="/mexican-sign-language/mg.png" alt="G in sign language" />
+          <img src="/mexican-sign-language/mg.png" alt="G in sign language" width={103} height={79} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             H in sign language
           </h3>
-          <img src="/mexican-sign-language/mh.png" alt="H in sign language" />
+          <img src="/mexican-sign-language/mh.png" alt="H in sign language" width={110} height={76} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             I in sign language
           </h3>
-          <img src="/mexican-sign-language/mi.png" alt="I in sign language" />
+          <img src="/mexican-sign-language/mi.png" alt="I in sign language" width={68} height={95} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             J in sign language
           </h3>
-          <img src="/mexican-sign-language/mj.png" alt="J in sign language" />
+          <img src="/mexican-sign-language/mj.png" alt="J in sign language" width={94} height={71} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             K in sign language
           </h3>
-          <img src="/mexican-sign-language/mk.png" alt="k in sign language" />
+          <img src="/mexican-sign-language/mk.png" alt="k in sign language" width={103} height={77} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             L in sign language
           </h3>
-          <img src="/mexican-sign-language/ml.png" alt="L in sign language" />
+          <img src="/mexican-sign-language/ml.png" alt="L in sign language" width={92} height={80} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             M in sign language
           </h3>
-          <img src="/mexican-sign-language/mm.png" alt="M in sign language" />
+          <img src="/mexican-sign-language/mm.png" alt="M in sign language" width={101} height={68} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             N in sign language
           </h3>
-          <img src="/mexican-sign-language/mn.png" alt="N in sign language" />
+          <img src="/mexican-sign-language/mn.png" alt="N in sign language" width={98} height={74} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             O in sign language
           </h3>
-          <img src="/mexican-sign-language/mo.png" alt="O in sign language" />
+          <img src="/mexican-sign-language/mo.png" alt="O in sign language" width={62} height={75} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             P in sign language
           </h3>
-          <img src="/mexican-sign-language/mp.png" alt="p in sign language" />
+          <img src="/mexican-sign-language/mp.png" alt="p in sign language" width={58} height={85} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Q in sign language
           </h3>
-          <img src="/mexican-sign-language/mq.png" alt="Q in sign language" />
+          <img src="/mexican-sign-language/mq.png" alt="Q in sign language" width={105} height={68} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             R in sign language
           </h3>
-          <img src="/mexican-sign-language/mr.png" alt="r in sign language" />
+          <img src="/mexican-sign-language/mr.png" alt="r in sign language" width={59} height={90} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             S in sign language
           </h3>
-          <img src="/mexican-sign-language/ms.png" alt="S in sign language" />
+          <img src="/mexican-sign-language/ms.png" alt="S in sign language" width={64} height={77} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             T in sign language
           </h3>
-          <img src="/mexican-sign-language/mt.png" alt="t in sign language" />
+          <img src="/mexican-sign-language/mt.png" alt="t in sign language" width={55} height={81} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             U in sign language
           </h3>
-          <img src="/mexican-sign-language/mu.png" alt="U in sign language" />
+          <img src="/mexican-sign-language/mu.png" alt="U in sign language" width={51} height={104} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             V in sign language
           </h3>
-          <img src="/mexican-sign-language/mv.png" alt="v in sign language" />
+          <img src="/mexican-sign-language/mv.png" alt="v in sign language" width={62} height={102} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             W in sign language
           </h3>
-          <img src="/mexican-sign-language/mw.png" alt="W in sign language" />
+          <img src="/mexican-sign-language/mw.png" alt="W in sign language" width={65} height={84} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             X in sign language
           </h3>
-          <img src="/mexican-sign-language/mx.png" alt="X in sign language" />
+          <img src="/mexican-sign-language/mx.png" alt="X in sign language" width={97} height={75} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Y in sign language
           </h3>
-          <img src="/mexican-sign-language/my.png" alt="Y in sign language" />
+          <img src="/mexican-sign-language/my.png" alt="Y in sign language" width={82} height={75} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Z in sign language
           </h3>
-          <img src="/mexican-sign-language/mz.png" alt="z in sign language" />
+          <img src="/mexican-sign-language/mz.png" alt="z in sign language" width={78} height={86} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="main-info">

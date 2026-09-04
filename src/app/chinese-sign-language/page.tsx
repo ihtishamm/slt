@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Translator from "@/components/translator/Translator";
 import JsonLd from "@/components/seo/JsonLd";
+import "@/styles/alphabet-page.css";
 import "@/styles/chinese-sign-language.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -62,7 +63,7 @@ export default function ChineseSignLanguagePage() {
         <h2>
           Chinese Sign Language Alphabet
         </h2>
-        <img src="/chinese-sign-language/chinese-sign-language-alphabet.png" alt="Chinese Sign Language Alphabet" />
+        <img src="/chinese-sign-language/chinese-sign-language-alphabet.png" alt="Chinese Sign Language Alphabet" width={712} height={502} decoding="async" />
         <p>
           Its traditional purpose is generally language exchange between deaf people, but it also includes educational, ethnic, and social arrangements throughout China.
 As China strengthens its accessibility laws and expands opportunities for people with disabilities, the demand for CSL is increasing in classrooms, workplaces, hospitals, virtual systems, and more. Knowing CSL is the path to a more comprehensive world, giving tens of millions of people access to visible communication every day.
@@ -84,163 +85,163 @@ CSL is different from spoken Chinese.
           <h3>
             A
           </h3>
-          <img src="/chinese-sign-language/ca.png" alt="A in sign language" />
+          <img src="/chinese-sign-language/ca.png" alt="A in sign language" width={99} height={107} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             B
           </h3>
-          <img src="/chinese-sign-language/cb.png" alt="B in sign language" />
+          <img src="/chinese-sign-language/cb.png" alt="B in sign language" width={98} height={107} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             C
           </h3>
-          <img src="/chinese-sign-language/cc.png" alt="C in sign language" />
+          <img src="/chinese-sign-language/cc.png" alt="C in sign language" width={80} height={99} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             D
           </h3>
-          <img src="/chinese-sign-language/cd.png" alt="D in sign language" />
+          <img src="/chinese-sign-language/cd.png" alt="D in sign language" width={83} height={99} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             E
           </h3>
-          <img src="/chinese-sign-language/ce.png" alt="E in sign language" />
+          <img src="/chinese-sign-language/ce.png" alt="E in sign language" width={118} height={82} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             F
           </h3>
-          <img src="/chinese-sign-language/cf.png" alt="F in sign language" />
+          <img src="/chinese-sign-language/cf.png" alt="F in sign language" width={107} height={83} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             G
           </h3>
-          <img src="/chinese-sign-language/cg.png" alt="G in sign language" />
+          <img src="/chinese-sign-language/cg.png" alt="G in sign language" width={112} height={75} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             H
           </h3>
-          <img src="/chinese-sign-language/ch.png" alt="H in sign language" />
+          <img src="/chinese-sign-language/ch.png" alt="H in sign language" width={87} height={117} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             I
           </h3>
-          <img src="/chinese-sign-language/ci.png" alt="I in sign language" />
+          <img src="/chinese-sign-language/ci.png" alt="I in sign language" width={79} height={110} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             J
           </h3>
-          <img src="/chinese-sign-language/cj.png" alt="J in sign language" />
+          <img src="/chinese-sign-language/cj.png" alt="J in sign language" width={78} height={104} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             K
           </h3>
-          <img src="/chinese-sign-language/ck.png" alt="K in sign language" />
+          <img src="/chinese-sign-language/ck.png" alt="K in sign language" width={83} height={100} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             L
           </h3>
-          <img src="/chinese-sign-language/cl.png" alt="L in sign language" />
+          <img src="/chinese-sign-language/cl.png" alt="L in sign language" width={91} height={102} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             M
           </h3>
-          <img src="/chinese-sign-language/cm.png" alt="M in sign language" />
+          <img src="/chinese-sign-language/cm.png" alt="M in sign language" width={98} height={85} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             N
           </h3>
-          <img src="/chinese-sign-language/cn.png" alt="N in sign language" />
+          <img src="/chinese-sign-language/cn.png" alt="N in sign language" width={83} height={85} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             O
           </h3>
-          <img src="/chinese-sign-language/co.png" alt="O in sign language" />
+          <img src="/chinese-sign-language/co.png" alt="O in sign language" width={83} height={86} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             P
           </h3>
-          <img src="/chinese-sign-language/cp.png" alt="P in sign language" />
+          <img src="/chinese-sign-language/cp.png" alt="P in sign language" width={87} height={97} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Q
           </h3>
-          <img src="/chinese-sign-language/cq.png" alt="Q in sign language" />
+          <img src="/chinese-sign-language/cq.png" alt="Q in sign language" width={92} height={93} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             R
           </h3>
-          <img src="/chinese-sign-language/cr.png" alt="R in sign language" />
+          <img src="/chinese-sign-language/cr.png" alt="R in sign language" width={107} height={96} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             S
           </h3>
-          <img src="/chinese-sign-language/cs.png" alt="S in sign language" />
+          <img src="/chinese-sign-language/cs.png" alt="S in sign language" width={91} height={84} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             T
           </h3>
-          <img src="/chinese-sign-language/ct.png" alt="T in sign language" />
+          <img src="/chinese-sign-language/ct.png" alt="T in sign language" width={77} height={100} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             U
           </h3>
-          <img src="/chinese-sign-language/cu.png" alt="U in sign language" />
+          <img src="/chinese-sign-language/cu.png" alt="U in sign language" width={89} height={107} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             V
           </h3>
-          <img src="/chinese-sign-language/cv.png" alt="V in sign language" />
+          <img src="/chinese-sign-language/cv.png" alt="V in sign language" width={80} height={109} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             W
           </h3>
-          <img src="/chinese-sign-language/cw.png" alt="W in sign language" />
+          <img src="/chinese-sign-language/cw.png" alt="W in sign language" width={103} height={101} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             X
           </h3>
-          <img src="/chinese-sign-language/cx.png" alt="X in sign language" />
+          <img src="/chinese-sign-language/cx.png" alt="X in sign language" width={93} height={98} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Y
           </h3>
-          <img src="/chinese-sign-language/cy.png" alt="Y in sign language" />
+          <img src="/chinese-sign-language/cy.png" alt="Y in sign language" width={87} height={93} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             Z
           </h3>
-          <img src="/chinese-sign-language/cz.png" alt="Z in sign language" />
+          <img src="/chinese-sign-language/cz.png" alt="Z in sign language" width={104} height={71} loading="lazy" decoding="async" />
         </div>
         <div className="alphabet-card">
           <h3>
             0
           </h3>
-          <img src="/chinese-sign-language/c0.png" alt="0 in sign language" />
+          <img src="/chinese-sign-language/c0.png" alt="0 in sign language" width={93} height={111} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="article">

@@ -150,85 +150,85 @@ export default function HomePage() {
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Thank You in ASL
                   </h2>
-                  <img src="/assets/images/thank-you-in-american-sign-language.webp" alt="Two-step guide showing woman signing Thank You in ASL — hand to chin then extending forward" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/thank-you-in-american-sign-language.webp" alt="Two-step guide showing woman signing Thank You in ASL — hand to chin then extending forward" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     How Are You In ASL
                   </h2>
-                  <img src="/assets/images/how-are-you-in-asl.webp" alt="Man demonstrating How Are You in ASL sign language with both thumbs up gesture on white background" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/how-are-you-in-asl.webp" alt="Man demonstrating How Are You in ASL sign language with both thumbs up gesture on white background" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     I Love You In ASL
                   </h2>
-                  <img src="/assets/images/i-love-you-in-american-sign-language.webp" alt="Man signing I Love You in American Sign Language with pinky, index finger, and thumb extended" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/i-love-you-in-american-sign-language.webp" alt="Man signing I Love You in American Sign Language with pinky, index finger, and thumb extended" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     What in American Sign Language
                   </h2>
-                  <img src="/assets/images/what-in-american-sign-language.webp" alt="Woman demonstrating What in ASL sign language with both palms up and surprised facial expression" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/what-in-american-sign-language.webp" alt="Woman demonstrating What in ASL sign language with both palms up and surprised facial expression" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Hi in American Sign Language
                   </h2>
-                  <img src="/assets/images/hi-in-american-sign-language.webp" alt="What In ASL" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/hi-in-american-sign-language.webp" alt="What In ASL" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Please in American Sign Language
                   </h2>
-                  <img src="/assets/images/please-in-asl.webp" alt="Woman demonstrating Please in ASL by rubbing flat hand in circles on chest with motion arrows" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/assets/images/please-in-asl.webp" alt="Woman demonstrating Please in ASL by rubbing flat hand in circles on chest with motion arrows" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     More In American Sign Language
                   </h2>
-                  <img src="/sign-language-words/more-in-sign-language.webp" alt="Child demonstrating MORE in ASL by bringing both pinched hands together at fingertips" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/more-in-sign-language.webp" alt="Child demonstrating MORE in ASL by bringing both pinched hands together at fingertips" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Wait In American Sign Language
                   </h2>
-                  <img src="/sign-language-words/wait-in-sign-language.webp" alt="Girl showing WAIT in ASL with one hand on chest and other hand open palm facing up" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/wait-in-sign-language.webp" alt="Girl showing WAIT in ASL with one hand on chest and other hand open palm facing up" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     You're Welcome In Sign Language
                   </h2>
-                  <img src="/sign-language-words/youe-welcome-in-sign-language.webp" alt="Woman signing YOU'RE WELCOME in ASL with flat hand moving forward from chin outward" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/youe-welcome-in-sign-language.webp" alt="Woman signing YOU'RE WELCOME in ASL with flat hand moving forward from chin outward" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Happy Birthday In Sign Language
                   </h2>
-                  <img src="/sign-language-words/happy-birthday-in-sign-language.webp" alt="Man demonstrating Happy Birthday in American Sign Language ASL with two-step hand gestures" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/happy-birthday-in-sign-language.webp" alt="Man demonstrating Happy Birthday in American Sign Language ASL with two-step hand gestures" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Family In Sign Language
                   </h2>
-                  <img src="/sign-language-words/family-sign-language.webp" alt="Person showing Family sign in ASL forming F-handshapes in a circle with both hands" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/family-sign-language.webp" alt="Person showing Family sign in ASL forming F-handshapes in a circle with both hands" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Sorry In Sign Language
                   </h2>
-                  <img src="/sign-language-words/sorry-sign-language.webp" alt="Child demonstrating Sorry in ASL with closed fist making circular motion on chest" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/sorry-sign-language.webp" alt="Child demonstrating Sorry in ASL with closed fist making circular motion on chest" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     All Done In Sign Language
                   </h2>
-                  <img src="/sign-language-words/all-done-sign-language.webp" alt="Man signing All Done in ASL with both open palms facing outward at chest level" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/all-done-sign-language.webp" alt="Man signing All Done in ASL with both open palms facing outward at chest level" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "280px", boxSizing: "border-box" }}>
                   <h2 style={{ fontSize: "20px", margin: "0 0 10px" }}>
                     Hello In Sign Language
                   </h2>
-                  <img src="/sign-language-words/hello-in-sign-langauge.webp" alt="Smiling girl demonstrating Hello in ASL with flat hand salute moving away from forehead" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} />
+                  <img src="/sign-language-words/hello-in-sign-langauge.webp" alt="Smiling girl demonstrating Hello in ASL with flat hand salute moving away from forehead" style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", marginBottom: "10px" }} width={540} height={540} loading="lazy" decoding="async" />
                 </div>
               </div>
               <h2>
@@ -301,14 +301,14 @@ export default function HomePage() {
                   </b>
                   . Now check below the translation of this input.
                 </p>
-                <img src="/assets/images/iloveyou.png" alt=" I Love You" />
+                <img src="/assets/images/iloveyou.png" alt=" I Love You" width={1207} height={402} loading="lazy" decoding="async" />
                 <h2>
                   American Sign Language Alphabet A-Z & 0-9
                 </h2>
                 <p>
                   ASL is one of the most widely used sign languages in the world. Although it uses the same alphabet as English for fingerspelling, it is not a subset of the English language. The sentence structure and grammar in ASL are distinct from English, following its own unique linguistic rules. We have created a list of alphabets in sign language using the Show Alphabet button. You can also view the preview of all American sign language (ASL) alphabets below.
                 </p>
-                <img src="/assets/images/alphabets-in-sign-language.png" alt="Alphabet In Sign Language" />
+                <img src="/assets/images/alphabets-in-sign-language.png" alt="Alphabet In Sign Language" width={867} height={511} loading="lazy" decoding="async" />
                 <p>
                   Now Check the list of all Alphabet In Sign Language from A To Z and 0 to 9 with a proper sign. We have also list a most common word in sign language below.
                 </p>
@@ -318,217 +318,217 @@ export default function HomePage() {
                   <h3>
                     A
                   </h3>
-                  <img src="/assets/images/a.webp" alt="A in sign language" />
+                  <img src="/assets/images/a.webp" alt="A in sign language" width={135} height={156} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     B
                   </h3>
-                  <img src="/assets/images/b.webp" alt="B in sign language" />
+                  <img src="/assets/images/b.webp" alt="B in sign language" width={160} height={136} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     C
                   </h3>
-                  <img src="/assets/images/c.webp" alt="C in sign language" />
+                  <img src="/assets/images/c.webp" alt="C in sign language" width={166} height={140} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     D
                   </h3>
-                  <img src="/assets/images/d.webp" alt="D in sign language" />
+                  <img src="/assets/images/d.webp" alt="D in sign language" width={145} height={130} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     E
                   </h3>
-                  <img src="/assets/images/e.webp" alt="E in sign language" />
+                  <img src="/assets/images/e.webp" alt="E in sign language" width={155} height={134} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     F
                   </h3>
-                  <img src="/assets/images/f.webp" alt="F in sign language" />
+                  <img src="/assets/images/f.webp" alt="F in sign language" width={140} height={122} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     G
                   </h3>
-                  <img src="/assets/images/g.webp" alt="G in sign language" />
+                  <img src="/assets/images/g.webp" alt="G in sign language" width={143} height={154} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     H
                   </h3>
-                  <img src="/assets/images/h.webp" alt="G in sign language" />
+                  <img src="/assets/images/h.webp" alt="G in sign language" width={159} height={148} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     I
                   </h3>
-                  <img src="/assets/images/i.webp" alt="I in sign language" />
+                  <img src="/assets/images/i.webp" alt="I in sign language" width={141} height={147} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     J
                   </h3>
-                  <img src="/assets/images/j.webp" alt="J in sign language" />
+                  <img src="/assets/images/j.webp" alt="J in sign language" width={138} height={148} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     K
                   </h3>
-                  <img src="/assets/images/k.webp" alt="k in sign language" />
+                  <img src="/assets/images/k.webp" alt="k in sign language" width={151} height={155} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     L
                   </h3>
-                  <img src="/assets/images/l.webp" alt="k in sign language" />
+                  <img src="/assets/images/l.webp" alt="k in sign language" width={138} height={146} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     M
                   </h3>
-                  <img src="/assets/images/m.webp" alt="M in sign language" />
+                  <img src="/assets/images/m.webp" alt="M in sign language" width={139} height={151} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     N
                   </h3>
-                  <img src="/assets/images/n.webp" alt="N in sign language" />
+                  <img src="/assets/images/n.webp" alt="N in sign language" width={148} height={151} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     O
                   </h3>
-                  <img src="/assets/images/o.webp" alt="O in sign language" />
+                  <img src="/assets/images/o.webp" alt="O in sign language" width={153} height={144} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     P
                   </h3>
-                  <img src="/assets/images/p.webp" alt="p in sign language" />
+                  <img src="/assets/images/p.webp" alt="p in sign language" width={140} height={150} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     Q
                   </h3>
-                  <img src="/assets/images/q.webp" alt="Q in sign language" />
+                  <img src="/assets/images/q.webp" alt="Q in sign language" width={141} height={145} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     R
                   </h3>
-                  <img src="/assets/images/r.webp" alt="r in sign language" />
+                  <img src="/assets/images/r.webp" alt="r in sign language" width={145} height={154} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     S
                   </h3>
-                  <img src="/assets/images/s.webp" alt="S in sign language" />
+                  <img src="/assets/images/s.webp" alt="S in sign language" width={137} height={149} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     T
                   </h3>
-                  <img src="/assets/images/t.webp" alt="t in sign language" />
+                  <img src="/assets/images/t.webp" alt="t in sign language" width={143} height={147} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     U
                   </h3>
-                  <img src="/assets/images/u.webp" alt="U in sign language" />
+                  <img src="/assets/images/u.webp" alt="U in sign language" width={119} height={153} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     V
                   </h3>
-                  <img src="/assets/images/v.webp" alt="v in sign language" />
+                  <img src="/assets/images/v.webp" alt="v in sign language" width={146} height={147} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     W
                   </h3>
-                  <img src="/assets/images/w.webp" alt="W in sign language" />
+                  <img src="/assets/images/w.webp" alt="W in sign language" width={156} height={145} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     X
                   </h3>
-                  <img src="/assets/images/x.webp" alt="X in sign language" />
+                  <img src="/assets/images/x.webp" alt="X in sign language" width={141} height={145} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     Y
                   </h3>
-                  <img src="/assets/images/y.webp" alt="Y in sign language" />
+                  <img src="/assets/images/y.webp" alt="Y in sign language" width={129} height={136} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     Z
                   </h3>
-                  <img src="/assets/images/z.webp" alt="z in sign language" />
+                  <img src="/assets/images/z.webp" alt="z in sign language" width={138} height={153} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     0
                   </h3>
-                  <img src="/assets/images/0.webp" alt="0 in sign language" />
+                  <img src="/assets/images/0.webp" alt="0 in sign language" width={155} height={157} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     1
                   </h3>
-                  <img src="/assets/images/1.webp" alt="1 in sign language" />
+                  <img src="/assets/images/1.webp" alt="1 in sign language" width={151} height={145} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     2
                   </h3>
-                  <img src="/assets/images/z.webp" alt="2 in sign language" />
+                  <img src="/assets/images/z.webp" alt="2 in sign language" width={138} height={153} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     3
                   </h3>
-                  <img src="/assets/images/3.webp" alt="3 in sign language" />
+                  <img src="/assets/images/3.webp" alt="3 in sign language" width={143} height={155} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     4
                   </h3>
-                  <img src="/assets/images/4.webp" alt="4 in sign language" />
+                  <img src="/assets/images/4.webp" alt="4 in sign language" width={136} height={145} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     5
                   </h3>
-                  <img src="/assets/images/5.webp" alt="5 in sign language" />
+                  <img src="/assets/images/5.webp" alt="5 in sign language" width={159} height={136} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     6
                   </h3>
-                  <img src="/assets/images/6.webp" alt="6 in sign language" />
+                  <img src="/assets/images/6.webp" alt="6 in sign language" width={157} height={155} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     7
                   </h3>
-                  <img src="/assets/images/7.webp" alt="7 in sign language" />
+                  <img src="/assets/images/7.webp" alt="7 in sign language" width={154} height={148} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     8
                   </h3>
-                  <img src="/assets/images/8.webp" alt="8 in sign language" />
+                  <img src="/assets/images/8.webp" alt="8 in sign language" width={147} height={149} loading="lazy" decoding="async" />
                 </div>
                 <div className="alphabet-card">
                   <h3>
                     9
                   </h3>
-                  <img src="/assets/images/9.webp" alt="9 in sign language" />
+                  <img src="/assets/images/9.webp" alt="9 in sign language" width={132} height={148} loading="lazy" decoding="async" />
                 </div>
               </div>
               <br />
