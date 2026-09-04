@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Icon from "@/components/ui/Icon";
 
 /**
  * Microphone input, using the browser's own speech recognition.
@@ -157,7 +158,7 @@ export default function VoiceInput({ onTranscript, onFinal, lang = "en-US" }: Vo
     return (
       <div className="voice-input">
         <button type="button" className="btn voice-btn" disabled aria-disabled="true">
-          <i className="fas fa-microphone-slash" />
+          <Icon name="microphone-slash" />
           Voice input
         </button>
         <p className="voice-status">
@@ -176,7 +177,7 @@ export default function VoiceInput({ onTranscript, onFinal, lang = "en-US" }: Vo
         aria-pressed={listening}
         aria-label={listening ? "Stop listening" : "Start voice input"}
       >
-        <i className={listening ? "fas fa-stop" : "fas fa-microphone"} />
+        <Icon name={listening ? "stop" : "microphone"} />
         {listening ? "Stop" : "Speak"}
       </button>
       {/* Announced to screen readers as it changes. */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import "@/styles/terms-and-condition.css";
+import Icon from "@/components/ui/Icon";
 
 export const metadata: Metadata = buildMetadata({
   "title": "Terms and Condition - Sign Language Translator",
@@ -187,7 +188,7 @@ export default function TermsAndConditionPage() {
           </div>
         </div>
         <a href="#" className="back-to-top" id="backToTop">
-          <i className="fas fa-arrow-up"></i>
+          <Icon name="arrow-up" title="Back to top" />
         </a>
         <br />
       </main>

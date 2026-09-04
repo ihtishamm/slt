@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
 import "@/styles/privacy.css";
+import Icon from "@/components/ui/Icon";
 
 export const metadata: Metadata = buildMetadata({
   "title": "Privacy Policy - Sign Language Translator",
@@ -191,7 +192,7 @@ export default function PrivacyPage() {
           </p>
         </div>
         <a href="#" className="back-to-top" id="backToTop">
-          <i className="fas fa-arrow-up"></i>
+          <Icon name="arrow-up" title="Back to top" />
         </a>
       </main>
     </>

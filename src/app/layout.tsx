@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Poppins } from "next/font/google";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import { site } from "@/lib/site";
@@ -15,28 +16,31 @@ export const metadata: Metadata = {
   },
 };
 
+/*
+ * Poppins, self-hosted.
+ *
+ * It used to come from fonts.googleapis.com, which meant a render-blocking
+ * stylesheet plus a second connection before any text could be painted in the
+ * right face. next/font downloads the files at build time and serves them from
+ * this origin, and it generates a size-adjusted fallback so the swap from the
+ * system font does not move the layout.
+ *
+ * The stylesheets ask for 'Poppins' by name, so the family is exposed under
+ * that name rather than through a CSS variable.
+ */
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  fallback: ["Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+});
+
 const GA_ID = "G-M09F1BRP5X";
 const ADSENSE_CLIENT = "ca-pub-6835970656144904";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        {/*
-          Font Awesome and Poppins were linked inconsistently across the old
-          pages (14/18 and 11/18 respectively) — four pages used `fa-` icon
-          classes without ever loading the font, so those icons never rendered.
-          Loading both once here fixes that and keeps every page consistent.
-        */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={poppins.className}>
       <body>
         <SiteHeader />
         {children}

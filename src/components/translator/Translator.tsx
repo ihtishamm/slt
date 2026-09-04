@@ -9,6 +9,7 @@ import { translate as translateText } from "@/lib/translate";
 import SignSequence from "./SignSequence";
 import VoiceInput from "./VoiceInput";
 import "./translator.css";
+import Icon from "@/components/ui/Icon";
 
 type View = "words" | "letters";
 
@@ -143,7 +144,7 @@ export default function Translator({
   } else if (!submitted.trim()) {
     body = (
       <div className="empty-result">
-        <i className="fas fa-sign-language" />
+        <Icon name="sign-language" />
         <p>Enter text to see translation</p>
       </div>
     );
@@ -282,7 +283,7 @@ export default function Translator({
 
         <div className="btn-group">
           <button className="btn primary-btn" id="translate-btn" onClick={() => translate(text)}>
-            <i className="fas fa-language" />
+            <Icon name="language" />
             {convertLabel}
           </button>
           <button
@@ -294,7 +295,7 @@ export default function Translator({
               stopPlaying();
             }}
           >
-            <i className="fas fa-font" />
+            <Icon name="font" />
             Show Alphabet
           </button>
         </div>
@@ -360,7 +361,7 @@ export default function Translator({
               className="btn play-btn"
               onClick={() => (playingIndex === null ? setPlayingIndex(0) : stopPlaying())}
             >
-              <i className={playingIndex === null ? "fas fa-play" : "fas fa-stop"} />
+              <Icon name={playingIndex === null ? "play" : "stop"} />
               {playingIndex === null ? "Play all" : "Stop"}
             </button>
 

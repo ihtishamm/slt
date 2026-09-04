@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
 import "@/styles/contact.css";
+import Icon from "@/components/ui/Icon";
+import { socialIcons } from "@/data/social";
 
 export const metadata: Metadata = buildMetadata({
   "title": "Contact Us - Abdul Razzaq",
@@ -35,7 +37,7 @@ export default function ContactPage() {
               <div className="contact-methods">
                 <div className="contact-method">
                   <div className="method-icon">
-                    <i className="fas fa-envelope"></i>
+                    <Icon name="envelope" />
                   </div>
                   <div className="method-title">
                     Email
@@ -48,7 +50,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-method">
                   <div className="method-icon">
-                    <i className="fas fa-briefcase"></i>
+                    <Icon name="briefcase" />
                   </div>
                   <div className="method-title">
                     Freelance Platforms
@@ -64,19 +66,31 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+              {/* These four were href="#" and went nowhere, and their Font
+                  Awesome brand marks needed a CDN stylesheet to render at all.
+                  They now use the site's own social data, so the links are real
+                  and the marks are inline. Twitter is absent because the site
+                  has no Twitter entry in src/data/social.ts. */}
               <div className="social-links">
-                <a href="#" className="social-link" title="LinkedIn">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" className="social-link" title="Twitter">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" className="social-link" title="GitHub">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href="#" className="social-link" title="Instagram">
-                  <i className="fab fa-instagram"></i>
-                </a>
+                {socialIcons
+                  .filter((i) => ["LinkedIn", "GitHub", "Instagram"].includes(i.label))
+                  .map((icon) => (
+                    <a
+                      key={icon.href}
+                      href={icon.href}
+                      className="social-link"
+                      title={icon.label}
+                      aria-label={icon.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg viewBox={icon.viewBox} width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        {icon.paths.map((d, i) => (
+                          <path key={i} d={d} />
+                        ))}
+                      </svg>
+                    </a>
+                  ))}
               </div>
             </div>
             <div className="services-quick-links animate animate-delay-2">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { mainNav } from "@/data/navigation";
+import Icon from "@/components/ui/Icon";
 
 /**
  * Site header with the mobile nav toggle.
@@ -56,7 +57,7 @@ export default function SiteHeader({ highlightActive = false }: { highlightActiv
 
         <div className="nav-actions">
           <Link href="/sign-language-alphabet" className="action-btn highlight">
-            <i className="fas fa-graduation-cap" />
+            <Icon name="graduation-cap" />
             Start Learning
           </Link>
         </div>
@@ -68,7 +69,7 @@ export default function SiteHeader({ highlightActive = false }: { highlightActiv
           aria-label="Toggle navigation menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <i className={open ? "fas fa-times" : "fas fa-bars"} style={{ color: "black" }} />
+          <Icon name={open ? "times" : "bars"} style={{ color: "black" }} title={open ? "Close menu" : "Open menu"} />
         </button>
       </div>
     </header>

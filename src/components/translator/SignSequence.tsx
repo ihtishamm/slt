@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { ResolvedToken } from "@/lib/sign-lookup";
+import Icon from "@/components/ui/Icon";
 
 /**
  * Renders a resolved token stream as signs.
@@ -37,7 +38,7 @@ export default function SignSequence({
   if (tokens.length === 0) {
     return (
       <div className="empty-result">
-        <i className="fas fa-sign-language" />
+        <Icon name="sign-language" />
         <p>Enter text to see translation</p>
       </div>
     );
