@@ -1,0 +1,223 @@
+/* Styles for the parts of the translator that did not exist before: the word
+ * sign media box, the gloss panel, playback, and the microphone.
+ *
+ * Everything else reuses the classes the nine per-page stylesheets already
+ * define (.sign-item, .sign-header, .sign-content, .btn, …), so this sheet only
+ * has to add, never override. The names below are new, so nothing here can
+ * change which rule wins on the migrated pages.
+ *
+ * Colours are taken from the CSS custom properties those sheets set, with a
+ * literal fallback for anywhere the variable is not defined. */
+
+/* ------------------------------------------------------------ word signs */
+
+.sign-word-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f7f9fa;
+}
+
+.sign-word-media img,
+.sign-word-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.sign-item:hover .sign-word-media img,
+.sign-item:hover .sign-word-media video {
+  transform: scale(1.05);
+}
+
+.sign-missing {
+  padding: 1.5rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Marks a word being spelled rather than signed, so the difference is never
+ * left for the visitor to infer. */
+.sign-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+
+/* The sign currently being played. */
+.sign-item.is-playing {
+  outline: 3px solid var(--primary, #00838f);
+  outline-offset: 2px;
+  transform: translateY(-5px);
+}
+
+/* ----------------------------------------------------------- gloss panel */
+
+.gloss-panel {
+  margin: 0 0.625rem 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  background: #f1f8f9;
+  border: 1px solid #d6e6e9;
+}
+
+.gloss-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.gloss-line strong {
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  color: var(--primary-dark, #006064);
+  word-break: break-word;
+}
+
+.gloss-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5a7276;
+}
+
+.gloss-markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Non-manual markers are grammar in ASL, not decoration — they get the same
+ * visual weight as the gloss itself. */
+.marker abbr {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-bottom: none;
+  cursor: help;
+  color: #fff;
+}
+
+.marker-whq abbr { background: #00695c; }
+.marker-ynq abbr { background: #0277bd; }
+.marker-neg abbr { background: #c62828; }
+.marker-topic abbr { background: #6a1b9a; }
+
+.gloss-notes {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #4a5c60;
+}
+
+.gloss-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.gloss-notes ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+/* -------------------------------------------------------------- playback */
+
+.playback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0.625rem 0.75rem;
+}
+
+.play-btn {
+  background: var(--primary-dark, #006064);
+  color: #fff;
+}
+
+.play-btn:hover {
+  filter: brightness(1.1);
+}
+
+.playback .select-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.playback-summary {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5a7276;
+}
+
+/* ----------------------------------------------------------- microphone */
+
+.voice-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.voice-btn {
+  background: #fff;
+  color: var(--primary-dark, #006064);
+  border: 2px solid var(--primary, #00838f);
+}
+
+.voice-btn:hover:not(:disabled) {
+  background: var(--primary, #00838f);
+  color: #fff;
+}
+
+.voice-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  border-color: #c7d0d2;
+  color: #6b7280;
+}
+
+/* A recording indicator that does not rely on colour alone. */
+.voice-btn.is-listening {
+  background: #c62828;
+  border-color: #c62828;
+  color: #fff;
+  animation: voice-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes voice-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(198, 40, 40, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voice-btn.is-listening { animation: none; }
+  .sign-word-media img,
+  .sign-word-media video { transition: none; }
+}
+
+.voice-status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5a7276;
+  min-height: 1.2em;
+}

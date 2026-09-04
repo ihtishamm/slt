@@ -1,8 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { alphabets, type AlphabetKey, type SignMap } from "@/data/alphabets";
 import { languagePages } from "@/data/navigation";
+import { hasWordSigns, countSigns } from "@/lib/sign-lookup";
+import { MARKER_LABELS } from "@/lib/asl-gloss";
+import { translate as translateText } from "@/lib/translate";
+import SignSequence from "./SignSequence";
+import VoiceInput from "./VoiceInput";
+import "./translator.css";
 
 type View = "words" | "letters";
 
@@ -17,13 +23,23 @@ export type TranslatorProps = {
   defaultText?: string;
 };
 
+/** How long each sign is held when playing the sequence, in ms. */
+const PLAY_SPEEDS = [
+  { label: "Slow", ms: 1600 },
+  { label: "Normal", ms: 1000 },
+  { label: "Fast", ms: 600 },
+];
+
 /**
- * The text-to-fingerspelling widget.
+ * The text-to-sign widget.
  *
- * Replaces nine separate scripts — the readable `main.js` plus eight obfuscated
- * per-language copies that were byte-for-byte the same logic with a different
- * image map. Markup, class names and element ids are kept identical to the old
- * pages so the existing stylesheets apply unchanged.
+ * Originally this spelled every character, so "thank you" came out as nine
+ * separate handshapes. It now resolves whole words and phrases against the sign
+ * dictionary and only fingerspells what is left over, optionally reordering the
+ * sentence into ASL gloss order first.
+ *
+ * Markup, class names and element ids are kept as they were so the nine
+ * per-page stylesheets still apply unchanged.
  */
 export default function Translator({
   alphabet,
@@ -32,6 +48,7 @@ export default function Translator({
   defaultText = "I Love You",
 }: TranslatorProps) {
   const signs: SignMap = alphabets[alphabet];
+  const wordSigns = hasWordSigns(alphabet);
 
   const [text, setText] = useState(defaultText);
   const [submitted, setSubmitted] = useState(defaultText);
@@ -40,8 +57,63 @@ export default function Translator({
   const [highlightCapitals, setHighlightCapitals] = useState(true);
   const [size, setSize] = useState(120);
   const [showingAlphabet, setShowingAlphabet] = useState(false);
+  // ASL word order. Only meaningful where there is a word dictionary.
+  const [aslGrammar, setAslGrammar] = useState(true);
+  const [speed, setSpeed] = useState(PLAY_SPEEDS[1].ms);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   const itemWidth = fixedWidth ? `${size}px` : "auto";
+
+  const translate = useCallback((value: string) => {
+    setSubmitted(value);
+    setShowingAlphabet(false);
+    setPlayingIndex(null);
+  }, []);
+
+  /* ---------------------------------------------------------------- gloss */
+
+  const useGloss = wordSigns && aslGrammar && view === "words";
+
+  const { tokens, gloss: glossed } = useMemo(
+    () =>
+      view === "letters"
+        ? { tokens: [], gloss: null }
+        : translateText(submitted, { alphabet, aslGrammar: useGloss }),
+    [submitted, view, alphabet, useGloss],
+  );
+
+  /* ----------------------------------------------------------- sequencer */
+
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const stopPlaying = useCallback(() => {
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = null;
+    setPlayingIndex(null);
+  }, []);
+
+  // Advances one sign at a time; clears itself at the end of the sequence.
+  useEffect(() => {
+    if (playingIndex === null) return;
+    if (playingIndex >= tokens.length) {
+      setPlayingIndex(null);
+      return;
+    }
+    timer.current = setTimeout(() => setPlayingIndex((i) => (i === null ? null : i + 1)), speed);
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [playingIndex, tokens.length, speed]);
+
+  // Never leave a timer running behind an unmounted component.
+  useEffect(() => stopPlaying, [stopPlaying]);
+
+  /* ---------------------------------------------------------------- body */
+
+  const alphabetKeys = useMemo(
+    () => Object.keys(signs).filter((k) => /[a-z0-9]/i.test(k)),
+    [signs],
+  );
 
   const signLetter = (letter: string, key: string | number) => {
     const src = signs[letter.toLowerCase()];
@@ -49,16 +121,11 @@ export default function Translator({
     return (
       <div className="sign-letter" key={key}>
         <div className="sign-image" style={{ width: `${size - 40}px`, height: `${size - 20}px` }}>
-          <img src={src} alt={`Sign for ${letter}`} />
+          <img src={src} alt={`Sign for ${letter}`} loading="lazy" decoding="async" />
         </div>
       </div>
     );
   };
-
-  const alphabetKeys = useMemo(
-    () => Object.keys(signs).filter((k) => /[a-z0-9]/i.test(k)),
-    [signs],
-  );
 
   let body: React.ReactNode;
 
@@ -81,18 +148,16 @@ export default function Translator({
       </div>
     );
   } else if (view === "words") {
-    body = submitted
-      .trim()
-      .split(/\s+/)
-      .map((word, i) => (
-        <div className="sign-item" key={`${word}-${i}`} style={{ width: itemWidth }}>
-          <div className="sign-header">{word}</div>
-          <div className="sign-content">
-            {word.split("").map((letter, j) => signLetter(letter, j))}
-          </div>
-        </div>
-      ));
+    body = (
+      <SignSequence
+        tokens={tokens}
+        size={size}
+        fixedWidth={fixedWidth}
+        activeIndex={playingIndex}
+      />
+    );
   } else {
+    // Letters view: unchanged behaviour, every character spelled out.
     body = submitted
       .trim()
       .split("")
@@ -114,7 +179,10 @@ export default function Translator({
   const selectView = (next: View) => {
     setView(next);
     setShowingAlphabet(false);
+    stopPlaying();
   };
+
+  const signCount = countSigns(tokens);
 
   return (
     <div className="container">
@@ -128,11 +196,14 @@ export default function Translator({
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              setSubmitted(text);
-              setShowingAlphabet(false);
-            }
+            if (e.key === "Enter") translate(text);
           }}
+        />
+
+        <VoiceInput
+          onTranscript={setText}
+          onFinal={translate}
+          lang={alphabet === "asl" ? "en-US" : undefined}
         />
 
         <div className="options">
@@ -161,6 +232,21 @@ export default function Translator({
               Highlight Capitals
             </label>
           </div>
+
+          {wordSigns && (
+            <div className="option-group">
+              <label className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="asl-grammar"
+                  checked={aslGrammar}
+                  onChange={(e) => setAslGrammar(e.target.checked)}
+                />
+                <span className="checkmark" />
+                ASL Grammar
+              </label>
+            </div>
+          )}
 
           <div className="option-group">
             <label htmlFor="size">Size:</label>
@@ -195,14 +281,7 @@ export default function Translator({
         </div>
 
         <div className="btn-group">
-          <button
-            className="btn primary-btn"
-            id="translate-btn"
-            onClick={() => {
-              setSubmitted(text);
-              setShowingAlphabet(false);
-            }}
-          >
+          <button className="btn primary-btn" id="translate-btn" onClick={() => translate(text)}>
             <i className="fas fa-language" />
             {convertLabel}
           </button>
@@ -212,6 +291,7 @@ export default function Translator({
             onClick={() => {
               setShowingAlphabet(true);
               setView("letters");
+              stopPlaying();
             }}
           >
             <i className="fas fa-font" />
@@ -240,6 +320,72 @@ export default function Translator({
             </button>
           </div>
         </div>
+
+        {/* The gloss, the facial grammar that goes with it, and what changed. */}
+        {glossed && glossed.tokens.length > 0 && (
+          <div className="gloss-panel">
+            <div className="gloss-line">
+              <span className="gloss-label">ASL gloss</span>
+              <strong>{glossed.gloss}</strong>
+            </div>
+
+            {glossed.markers.length > 0 && (
+              <ul className="gloss-markers">
+                {glossed.markers.map((marker) => (
+                  <li key={marker} className={`marker marker-${marker.toLowerCase()}`}>
+                    <abbr title={MARKER_LABELS[marker]}>{marker}</abbr>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {glossed.notes.length > 0 && (
+              <details className="gloss-notes">
+                <summary>Why the order changed</summary>
+                <ul>
+                  {glossed.notes.map((note) => (
+                    <li key={note}>{note}</li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
+        )}
+
+        {/* Playback, and an honest count of what is signed vs spelled. */}
+        {view === "words" && tokens.length > 0 && (
+          <div className="playback">
+            <button
+              type="button"
+              className="btn play-btn"
+              onClick={() => (playingIndex === null ? setPlayingIndex(0) : stopPlaying())}
+            >
+              <i className={playingIndex === null ? "fas fa-play" : "fas fa-stop"} />
+              {playingIndex === null ? "Play all" : "Stop"}
+            </button>
+
+            <div className="select-container">
+              <label htmlFor="play-speed">Speed:</label>
+              <select
+                id="play-speed"
+                value={speed}
+                onChange={(e) => setSpeed(Number(e.target.value))}
+              >
+                {PLAY_SPEEDS.map((s) => (
+                  <option key={s.ms} value={s.ms}>
+                    {s.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <p className="playback-summary">
+              {signCount} of {tokens.length} signed
+              {tokens.length - signCount > 0 && `, ${tokens.length - signCount} fingerspelled`}
+            </p>
+          </div>
+        )}
+
         <div id="result-content" className="result-content">
           {body}
         </div>

@@ -68,7 +68,7 @@ export const signDictionary: SignEntry[] = [
   {gloss:"YES",words:["yes","yeah","yep"],image:"/assets/images/yes-in-sign-language.webp",width:476,height:494,license:{"name":"SLTranslator (own work)","commercial":true}},
   {gloss:"NO",words:["no","nope"],image:"/sign-language-words/no-sign-language.webp",width:540,height:540,license:{"name":"SLTranslator (own work)","commercial":true}},
   {gloss:"MORE",words:["more"],image:"/sign-language-words/more-in-sign-language.webp",width:540,height:540,license:{"name":"SLTranslator (own work)","commercial":true}},
-  {gloss:"ALL-DONE",words:["all done","finished","done"],image:"/sign-language-words/all-done-sign-language.webp",width:540,height:540,license:{"name":"SLTranslator (own work)","commercial":true}},
+  {gloss:"ALL-DONE",words:["all done","finished","done","finish"],image:"/sign-language-words/all-done-sign-language.webp",width:540,height:540,license:{"name":"SLTranslator (own work)","commercial":true}},
   {gloss:"WAIT",words:["wait"],image:"/sign-language-words/wait-in-sign-language.webp",width:540,height:540,license:{"name":"SLTranslator (own work)","commercial":true}},
   {gloss:"STOP",words:["stop"],image:"/assets/images/stop-in-sign-language.webp",width:474,height:513,license:{"name":"SLTranslator (own work)","commercial":true}},
   {gloss:"GO",words:["go"],image:"/assets/images/go-in-sign-language.webp",width:486,height:488,license:{"name":"SLTranslator (own work)","commercial":true}},

@@ -48,7 +48,9 @@ const ENTRIES = [
   { gloss: 'YES',            words: ['yes', 'yeah', 'yep'],                   image: `${ASSETS}/yes-in-sign-language.webp` },
   { gloss: 'NO',             words: ['no', 'nope'],                           image: `${WORDS}/no-sign-language.webp` },
   { gloss: 'MORE',           words: ['more'],                                 image: `${WORDS}/more-in-sign-language.webp` },
-  { gloss: 'ALL-DONE',       words: ['all done', 'finished', 'done'],         image: `${WORDS}/all-done-sign-language.webp` },
+  // FINISH is also the gloss the grammar engine inserts to mark past tense,
+  // and it is the same sign, so it resolves here rather than fingerspelling.
+  { gloss: 'ALL-DONE',       words: ['all done', 'finished', 'done', 'finish'], image: `${WORDS}/all-done-sign-language.webp` },
   { gloss: 'WAIT',           words: ['wait'],                                 image: `${WORDS}/wait-in-sign-language.webp` },
   { gloss: 'STOP',           words: ['stop'],                                 image: `${ASSETS}/stop-in-sign-language.webp` },
   { gloss: 'GO',             words: ['go'],                                   image: `${ASSETS}/go-in-sign-language.webp` },
