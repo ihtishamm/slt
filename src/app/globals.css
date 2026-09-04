@@ -1,0 +1,16 @@
+/* Global stylesheet.
+ *
+ * Deliberately minimal. Each route imports its own stylesheet from
+ * `src/styles/`, which carries that page's full rule set (including the header
+ * and footer rules). The legacy pages shared no common leading rules, so
+ * hoisting more into a site-wide sheet here would change which rules win.
+ * See src/styles/README.md. */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}

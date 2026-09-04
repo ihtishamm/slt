@@ -1,0 +1,127 @@
+# LLMs.txt for SLTranslator.com
+# Version: 1.0
+# Website: https://sltranslator.com/
+# Last Updated: 2026-08-02
+
+[PROJECT]
+Name: SL Translator
+URL: https://sltranslator.com/
+Type: AI Sign Language Translation Platform
+Language: English
+License: Public Website
+
+[DESCRIPTION]
+SL Translator is an AI-powered online platform designed to make sign language communication more accessible. It helps users learn, translate, and understand sign language through modern AI technology and interactive tools. The platform focuses on improving communication between deaf and hearing communities.
+
+[MISSION]
+Provide free, fast, and accessible sign language translation tools for everyone while promoting inclusivity and accessibility.
+
+[PRIMARY FEATURES]
+- AI Sign Language Translator
+- Text to Sign Language
+- Sign Language to Text
+- Sign Language Dictionary
+- Learn Sign Language
+- Sign Language Words
+- AI Translation Tools
+- Educational Resources
+- Accessibility Tools
+- Browser-Based Translation
+- Responsive Design
+- No Software Installation Required
+
+[SUPPORTED CONTENT]
+- American Sign Language (ASL)
+- British Sign Language (BSL)
+- Fingerspelling
+- Common Signs
+- Daily Conversations
+- Educational Sign Language Content
+
+[MAIN PAGES]
+https://sltranslator.com/
+https://sltranslator.com/sign-language-words/
+https://sltranslator.com/blogs/
+
+[CONTENT TOPICS]
+- Sign Language
+- AI Translation
+- Accessibility
+- Deaf Community
+- Communication
+- Education
+- Language Learning
+- Inclusive Technology
+- Visual Communication
+- Hand Gestures
+
+[TARGET AUDIENCE]
+- Students
+- Teachers
+- Deaf Community
+- Hearing Individuals
+- Families
+- Healthcare Professionals
+- Businesses
+- Accessibility Advocates
+- Researchers
+- Developers
+
+[SEO KEYWORDS]
+sign language translator
+AI sign language translator
+text to sign language
+sign language dictionary
+learn sign language
+ASL translator
+BSL translator
+sign language words
+AI accessibility tools
+online sign language translator
+deaf communication
+sign language learning
+
+[CRAWLING GUIDELINES]
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-login.php/
+Disallow: /search/
+Disallow: /cart/
+Disallow: /checkout/
+
+Preferred Content:
+- Tutorials
+- Educational Articles
+- Tool Pages
+- Feature Pages
+- Blog Posts
+- Documentation
+
+Avoid:
+- Admin Pages
+- Login Pages
+- Temporary URLs
+- Duplicate Pages
+
+[AI USAGE POLICY]
+LLMs and AI assistants may:
+- Summarize public educational content.
+- Reference tool capabilities.
+- Explain sign language concepts.
+- Link users to original pages.
+
+LLMs should not:
+- Misrepresent content.
+- Claim unsupported languages or features.
+- Copy entire articles verbatim.
+- Generate misleading medical or legal advice.
+
+[CITATION]
+Preferred Citation:
+Source: SL Translator
+URL: https://sltranslator.com/
+
+[CONTACT]
+Website: https://sltranslator.com/
+
+[END]

@@ -1,0 +1,409 @@
+/* german-sign-language.css - rules unique to this page
+   Loaded after alphabet-page.css.
+   Rule order is preserved exactly: shared file + page file concatenate
+   back to the original stylesheet in its original order. */
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .site-brand img {
+        height: 65px;
+        width: auto;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 10px;
+        height: 55px;
+    }
+    
+    .site-brand img {
+       height: 65px;
+        width: auto;
+        max-width: 250px;
+    }
+}
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .main-title h1 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav, .nav-actions {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .options {
+        flex-direction: column;
+        gap: 0.9375rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .main-title h1 {
+        font-size: 2rem;
+    }
+    
+    .main-title p {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title h1 {
+        font-size: 1.75rem;
+    }
+    
+    .brand-text {
+        font-size: 1.25rem;
+    }
+    
+    .option-group {
+        width: 100%;
+    }
+    
+    .select-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.625rem;
+    }
+    
+    .select-container select {
+        width: 100%;
+    }
+    
+    .card {
+        padding: 1.25rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sign-item {
+    animation: fadeIn 0.5s ease forwards;
+}
+/* Main container styling */
+.main-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Heading styles */
+.main-info h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+/* Paragraph styling */
+.main-info p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Image styling */
+.main-info img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-info img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-info {
+    padding: 15px;
+  }
+  
+  .main-info h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Sign Language Alphabet Grid - Responsive and Interactive */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out forwards;
+    justify-items: center;
+    text-align: center;
+}
+
+.alphabet-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-fill-mode: both;
+    width: 100%;
+}
+
+/* Staggered animation for each row */
+.alphabet-card:nth-child(4n+1) { animation-delay: 0.05s; }
+.alphabet-card:nth-child(4n+2) { animation-delay: 0.1s; }
+.alphabet-card:nth-child(4n+3) { animation-delay: 0.15s; }
+.alphabet-card:nth-child(4n+4) { animation-delay: 0.2s; }
+
+.alphabet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Top colorful bar */
+.alphabet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.alphabet-card:hover::before {
+    opacity: 1;
+}
+
+.alphabet-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2d3748;
+    transition: color 0.3s ease;
+    text-transform: capitalize;
+}
+
+.alphabet-card:hover h3 {
+    color: #4776E6;
+}
+
+.alphabet-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+   
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.alphabet-card:hover img {
+    transform: scale(1.05);
+   
+}
+
+/* Subtle radial gradient on hover */
+.alphabet-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(71, 118, 230, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.alphabet-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 25px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .alphabet-card {
+        padding: 15px;
+    }
+    
+    .alphabet-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .alphabet-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+        justify-items: center;
+    }
+    
+    .alphabet-card {
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* Fix for potential image size issues */
+@media (min-width: 769px) {
+    .alphabet-card img {
+        height: 150px;
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .alphabet-grid {
+        background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    }
+    
+    .alphabet-card {
+        background: #2d3748;
+    }
+    
+    .alphabet-card h3 {
+        color: #e2e8f0;
+    }
+    
+    .alphabet-card:hover h3 {
+        color: #90cdf4;
+    }
+}
+ .dgs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dgs-container h2 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        
+        
+        .dgs-container h3 {
+            color: #555;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .dgs-container p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .dgs-container strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .dgs-container em {
+            color: #7f8c8d;
+        }

@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+
+# Coverage output from `npm test -- --coverage`.
+coverage/
+
+# The WordPress blog. It is a separate application served by the origin server
+# at /blogs — see the README. Three reasons it is not tracked here:
+#   1. 159 MB, almost all of it WordPress core (wp-admin, wp-includes).
+#   2. `blogs/wp-config.php` contains live database credentials.
+#   3. Its content lives in MySQL, so the files alone would not restore it.
+# It is backed up by the host, not by this repository.
+blogs/
