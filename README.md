@@ -125,9 +125,13 @@ those rules. Every `<img>` does carry `width`/`height` so the browser can
 reserve its space — run `node tools/add-image-dimensions.cjs` after adding new
 images, and it will fill them in from the files themselves.
 
-Nothing is loaded from a CDN. Poppins is self-hosted through `next/font`, and
-the seventeen icons the site uses are inline SVG in
-[`src/components/ui/Icon.tsx`](src/components/ui/Icon.tsx).
+Nothing is loaded from a CDN, at runtime **or at build time**. The seventeen
+icons the site uses are inline SVG in
+[`src/components/ui/Icon.tsx`](src/components/ui/Icon.tsx), and Poppins is
+committed to [`src/app/fonts/`](src/app/fonts/) and loaded with
+`next/font/local`. `next/font/google` would have downloaded it during every
+clean build — a hard failure, not a fallback, when the network is unavailable.
+See [`src/app/fonts/README.md`](src/app/fonts/README.md).
 
 ### Adding a sign language
 
