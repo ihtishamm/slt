@@ -28,7 +28,10 @@ export type IconName =
   | "microphone"
   | "microphone-slash"
   | "play"
-  | "stop";
+  | "stop"
+  | "send"
+  | "sliders"
+  | "keyboard";
 
 type Shape = { d: string; fill?: boolean };
 
@@ -62,6 +65,13 @@ const ICONS: Record<IconName, Shape[]> = {
     { d: "M9 6a3 3 0 0 1 6 0v6M9 10v2a3 3 0 0 0 4.5 2.6" },
     { d: "M5 11a7 7 0 0 0 10.5 6M19 11v1M12 18v3" },
     { d: "m3 3 18 18" },
+  ],
+  // A paper plane, the universal "send this" affordance.
+  send: [{ d: "M21.5 12 3 4.5l3 7.5-3 7.5z", fill: true }, { d: "M6 12h15.5" }],
+  sliders: [{ d: "M4 8h10M18 8h2M4 16h4M12 16h8" }, { d: "M16 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0M10 16a2 2 0 1 0-4 0 2 2 0 0 0 4 0" }],
+  keyboard: [
+    { d: "M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" },
+    { d: "M7 10h.01M11 10h.01M15 10h.01M17 10h.01M7 14h10" },
   ],
   play: [{ d: "M7 4.5 19 12 7 19.5z", fill: true }],
   stop: [{ d: "M6.5 6.5h11v11h-11z", fill: true }],

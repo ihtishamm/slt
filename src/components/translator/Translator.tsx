@@ -58,9 +58,24 @@ export default function Translator({
   const [highlightCapitals, setHighlightCapitals] = useState(true);
   const [size, setSize] = useState(120);
   const [showingAlphabet, setShowingAlphabet] = useState(false);
-  // ASL word order. Only meaningful where there is a word dictionary.
-  const [aslGrammar, setAslGrammar] = useState(true);
   const [speed, setSpeed] = useState(PLAY_SPEEDS[1].ms);
+  const [voiceStatus, setVoiceStatus] = useState("");
+  const [listening, setListening] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  /*
+   * Grow the box to fit what has been typed, up to a limit.
+   *
+   * The field is a textarea rather than an input so a long sentence stays
+   * readable instead of scrolling sideways one word at a time — but it should
+   * start at one line and only take the room it needs.
+   */
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight, 180)}px`;
+  }, [text]);
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   const itemWidth = fixedWidth ? `${size}px` : "auto";
@@ -73,7 +88,13 @@ export default function Translator({
 
   /* ---------------------------------------------------------------- gloss */
 
-  const useGloss = wordSigns && aslGrammar && view === "words";
+  /*
+   * ASL word order is always on. It was briefly a checkbox, but a toggle that
+   * turns the grammar off just produces signed English — which is the thing
+   * this was built to stop doing — so there is nothing useful on the other
+   * side of it. Off ASL there is no word dictionary, so no gloss either.
+   */
+  const useGloss = wordSigns && view === "words";
 
   const { tokens, gloss: glossed } = useMemo(
     () =>
@@ -189,116 +210,140 @@ export default function Translator({
     <div className="container">
       <div className="card input-section">
         <h2>{heading}</h2>
-        <input
-          type="text"
-          className="input-box"
-          id="text-input"
-          placeholder="Enter text to translate..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") translate(text);
-          }}
-        />
+        <div className={listening ? "composer is-listening" : "composer"}>
+          <textarea
+            ref={inputRef}
+            className="composer-input"
+            id="text-input"
+            rows={1}
+            placeholder="Type or speak a sentence…"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              // Enter sends, Shift+Enter makes a new line — the convention
+              // every chat interface has taught people to expect.
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                translate(text);
+              }
+            }}
+            aria-label={heading}
+          />
 
-        <VoiceInput
-          onTranscript={setText}
-          onFinal={translate}
-          lang={alphabet === "asl" ? "en-US" : undefined}
-        />
+          <div className="composer-bar">
+            {/* One line, always present, so the toolbar never jumps. */}
+            <p className="composer-status" role="status" aria-live="polite">
+              {voiceStatus}
+            </p>
 
-        <div className="options">
-          <div className="option-group">
-            <label className="checkbox-container">
+            <div className="composer-buttons">
+              <VoiceInput
+                onTranscript={setText}
+                onFinal={translate}
+                onStatus={setVoiceStatus}
+                onListeningChange={setListening}
+                lang={alphabet === "asl" ? "en-US" : undefined}
+              />
+              <button
+                type="button"
+                className="composer-btn composer-send"
+                onClick={() => translate(text)}
+                disabled={!text.trim()}
+                title={convertLabel}
+                aria-label={convertLabel}
+              >
+                <Icon name="send" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="composer-tools">
+          <button
+            type="button"
+            className={showingAlphabet ? "tool-chip is-active" : "tool-chip"}
+            aria-pressed={showingAlphabet}
+            onClick={() => {
+              // A toggle, not a one-way trip: previously the only way back to
+              // your own translation was the view tabs, which does not read as
+              // "undo the thing I just clicked".
+              if (showingAlphabet) {
+                setShowingAlphabet(false);
+                setView("words");
+              } else {
+                setShowingAlphabet(true);
+                setView("letters");
+              }
+              stopPlaying();
+            }}
+          >
+            <Icon name="font" />
+            {showingAlphabet ? "Hide alphabet" : "Show alphabet"}
+          </button>
+
+          <label className="tool-chip tool-select">
+            Size
+            <select value={size} onChange={(e) => setSize(Number(e.target.value))} aria-label="Sign size">
+              <option value="100">S</option>
+              <option value="110">M</option>
+              <option value="120">L</option>
+              <option value="130">XL</option>
+            </select>
+          </label>
+
+          <label className="tool-chip tool-select">
+            Language
+            <select
+              value=""
+              onChange={(e) => {
+                if (e.target.value) window.location.href = e.target.value;
+              }}
+              aria-label="Switch sign language"
+            >
+              <option value="">This page</option>
+              {languagePages
+                .filter((l) => l.href !== "/")
+                .map((l) => (
+                  <option key={l.href} value={l.href}>
+                    {l.label}
+                  </option>
+                ))}
+            </select>
+          </label>
+        </div>
+
+        {/* Two narrow display switches that most visitors never need. They are
+            kept, because removing a control removes a capability, but folded
+            away so they do not compete with the composer. */}
+        <details className="composer-more">
+          <summary>
+            <Icon name="sliders" />
+            Display options
+          </summary>
+          <div className="composer-more-body">
+            <label className="switch">
               <input
                 type="checkbox"
                 id="fixed-width"
                 checked={fixedWidth}
                 onChange={(e) => setFixedWidth(e.target.checked)}
               />
-              <span className="checkmark" />
-              Fixed Width
+              <span className="switch-track" />
+              Equal-width cards
             </label>
-          </div>
-
-          <div className="option-group">
-            <label className="checkbox-container">
+            <label className="switch">
               <input
                 type="checkbox"
                 id="highlight-capitals"
                 checked={highlightCapitals}
                 onChange={(e) => setHighlightCapitals(e.target.checked)}
               />
-              <span className="checkmark" />
-              Highlight Capitals
+              <span className="switch-track" />
+              Highlight capitals
+              <span className="switch-note">Letters view only</span>
             </label>
           </div>
-
-          {wordSigns && (
-            <div className="option-group">
-              <label className="checkbox-container">
-                <input
-                  type="checkbox"
-                  id="asl-grammar"
-                  checked={aslGrammar}
-                  onChange={(e) => setAslGrammar(e.target.checked)}
-                />
-                <span className="checkmark" />
-                ASL Grammar
-              </label>
-            </div>
-          )}
-
-          <div className="option-group">
-            <label htmlFor="size">Size:</label>
-            <div className="select-container">
-              <select id="size" value={size} onChange={(e) => setSize(Number(e.target.value))}>
-                <option value="100">100</option>
-                <option value="110">110</option>
-                <option value="120">120</option>
-                <option value="130">130</option>
-              </select>
-            </div>
-
-            <div className="select-container">
-              <select
-                id="link"
-                value=""
-                onChange={(e) => {
-                  if (e.target.value) window.location.href = e.target.value;
-                }}
-              >
-                <option value="">Select a Sign Language Translator</option>
-                {languagePages
-                  .filter((l) => l.href !== "/")
-                  .map((l) => (
-                    <option key={l.href} value={l.href}>
-                      {l.label} Translator
-                    </option>
-                  ))}
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div className="btn-group">
-          <button className="btn primary-btn" id="translate-btn" onClick={() => translate(text)}>
-            <Icon name="language" />
-            {convertLabel}
-          </button>
-          <button
-            className="btn secondary-btn"
-            id="show-alphabet-btn"
-            onClick={() => {
-              setShowingAlphabet(true);
-              setView("letters");
-              stopPlaying();
-            }}
-          >
-            <Icon name="font" />
-            Show Alphabet
-          </button>
-        </div>
+        </details>
       </div>
 
       <div className="card result-section">
@@ -358,19 +403,20 @@ export default function Translator({
           <div className="playback">
             <button
               type="button"
-              className="btn play-btn"
+              className="play-btn"
               onClick={() => (playingIndex === null ? setPlayingIndex(0) : stopPlaying())}
             >
               <Icon name={playingIndex === null ? "play" : "stop"} />
               {playingIndex === null ? "Play all" : "Stop"}
             </button>
 
-            <div className="select-container">
-              <label htmlFor="play-speed">Speed:</label>
+            <label className="tool-chip tool-select">
+              Speed
               <select
                 id="play-speed"
                 value={speed}
                 onChange={(e) => setSpeed(Number(e.target.value))}
+                aria-label="Playback speed"
               >
                 {PLAY_SPEEDS.map((s) => (
                   <option key={s.ms} value={s.ms}>
@@ -378,12 +424,18 @@ export default function Translator({
                   </option>
                 ))}
               </select>
-            </div>
+            </label>
 
-            <p className="playback-summary">
-              {signCount} of {tokens.length} signed
-              {tokens.length - signCount > 0 && `, ${tokens.length - signCount} fingerspelled`}
-            </p>
+            {/* The split matters: it is the difference between a real sign and
+                a word being spelled out because the dictionary lacks it. */}
+            <div className="count-pills">
+              <span className="count-pill is-signed">{signCount} signed</span>
+              {tokens.length - signCount > 0 && (
+                <span className="count-pill is-spelled">
+                  {tokens.length - signCount} fingerspelled
+                </span>
+              )}
+            </div>
           </div>
         )}
 

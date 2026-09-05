@@ -143,66 +143,317 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin: 0 0.625rem 0.75rem;
+  gap: 0.6rem;
+  margin: 0 0.625rem 1rem;
 }
 
 .play-btn {
-  background: var(--primary-dark, #006064);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary, #6366f1);
   color: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease;
 }
 
-.play-btn:hover {
-  filter: brightness(1.1);
+.play-btn:hover { background: var(--primary-dark, #4f46e5); }
+.play-btn:active { transform: scale(0.97); }
+
+.count-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: auto;
 }
 
-.playback .select-container {
+/* Colour-coded to match the "spelled" badge on the cards themselves, so the
+   count and the cards tell the same story. */
+.count-pill {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.count-pill.is-signed {
+  background: #e8f2ec;
+  color: #1b6b47;
+}
+
+.count-pill.is-spelled {
+  background: #f3f0fa;
+  color: #5b4b8a;
+}
+
+
+/* ========================================================================
+ * Composer
+ *
+ * The input follows the pattern every chat interface has now taught people:
+ * one bordered field that grows with the text, with the actions sitting inside
+ * it on the bottom right rather than as a separate row of buttons underneath.
+ * Enter sends; Shift+Enter makes a new line.
+ *
+ * It replaces a single-line <input>, a wide "Convert" button, a "Show
+ * Alphabet" button, three checkboxes and two dropdowns all competing for the
+ * same row.
+ * ===================================================================== */
+
+.composer {
+  border: 1.5px solid #dfe3ec;
+  border-radius: 18px;
+  background: #fff;
+  padding: 0.35rem 0.35rem 0.35rem 0.9rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.composer:focus-within {
+  border-color: var(--primary, #6366f1);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* Recording is signalled by the whole field, not just the button, so it is
+   obvious at a glance that the microphone is live. */
+.composer.is-listening {
+  border-color: #c62828;
+  box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.12);
+}
+
+.composer-input {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  padding: 0.75rem 0.25rem 0.25rem 0;
+  font: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #1f2430;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.composer-input::placeholder {
+  color: #9aa3b2;
+}
+
+.composer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.15rem 0 0.15rem 0;
+}
+
+/* Always rendered, even when empty, so the buttons never shift. */
+.composer-status {
+  margin: 0;
+  min-height: 1.25em;
+  font-size: 0.82rem;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.composer-buttons {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  flex-shrink: 0;
+  /* Keeps the buttons on the right even on small screens, where the status
+     line is hidden and space-between would otherwise strand them left. */
+  margin-left: auto;
 }
 
-.playback-summary {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #5a7276;
-}
-
-/* ----------------------------------------------------------- microphone */
-
-.voice-input {
-  display: flex;
-  flex-wrap: wrap;
+.composer-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  margin: 0.75rem 0;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
 }
 
-.voice-btn {
-  background: #fff;
-  color: var(--primary-dark, #006064);
-  border: 2px solid var(--primary, #00838f);
+.composer-btn:active { transform: scale(0.94); }
+
+.composer-mic {
+  background: #f1f3f9;
+  color: #4b5563;
 }
 
-.voice-btn:hover:not(:disabled) {
-  background: var(--primary, #00838f);
-  color: #fff;
+.composer-mic:hover:not(:disabled) {
+  background: #e5e8f2;
+  color: var(--primary-dark, #4f46e5);
 }
 
-.voice-btn:disabled {
-  opacity: 0.55;
+.composer-mic:disabled {
+  opacity: 0.45;
   cursor: not-allowed;
-  border-color: #c7d0d2;
-  color: #6b7280;
 }
 
-/* A recording indicator that does not rely on colour alone. */
-.voice-btn.is-listening {
+.composer-mic.is-listening {
   background: #c62828;
-  border-color: #c62828;
   color: #fff;
   animation: voice-pulse 1.4s ease-in-out infinite;
 }
+
+.composer-send {
+  background: var(--primary, #6366f1);
+  color: #fff;
+}
+
+.composer-send:hover:not(:disabled) {
+  background: var(--primary-dark, #4f46e5);
+}
+
+.composer-send:disabled {
+  background: #e5e8f2;
+  color: #a8afbd;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------------- tool row */
+
+.composer-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid #e2e6ef;
+  border-radius: 999px;
+  background: #fff;
+  color: #4b5563;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.tool-chip:hover {
+  border-color: var(--primary, #6366f1);
+  color: var(--primary-dark, #4f46e5);
+}
+
+.tool-chip.is-active {
+  background: var(--primary, #6366f1);
+  border-color: var(--primary, #6366f1);
+  color: #fff;
+}
+
+/* The select is the control; the chip is just its frame. */
+.tool-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 0.1rem;
+}
+
+/* ------------------------------------------------------- display options */
+
+.composer-more {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.composer-more > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.3rem 0;
+  width: fit-content;
+}
+
+.composer-more > summary::-webkit-details-marker { display: none; }
+.composer-more > summary:hover { color: var(--primary-dark, #4f46e5); }
+
+.composer-more-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 0.75rem 0 0.25rem;
+}
+
+/* A switch rather than a checkbox: these turn a display mode on and off. */
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-track {
+  position: relative;
+  flex-shrink: 0;
+  width: 38px;
+  height: 22px;
+  border-radius: 999px;
+  background: #d8dce6;
+  transition: background-color 0.18s ease;
+}
+
+.switch-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.18s ease;
+}
+
+.switch input:checked ~ .switch-track { background: var(--primary, #6366f1); }
+.switch input:checked ~ .switch-track::after { transform: translateX(16px); }
+.switch input:focus-visible ~ .switch-track {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.switch-note {
+  color: #9aa3b2;
+  font-size: 0.78rem;
+}
+
+
+/* ------------------------------------------------------------- animation */
 
 @keyframes voice-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.5); }
@@ -210,14 +461,22 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .voice-btn.is-listening { animation: none; }
+  .composer-mic.is-listening { animation: none; }
+  .composer,
+  .composer-btn,
+  .tool-chip,
+  .play-btn,
+  .switch-track,
+  .switch-track::after,
   .sign-word-media img,
   .sign-word-media video { transition: none; }
 }
 
-.voice-status {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #5a7276;
-  min-height: 1.2em;
+/* ----------------------------------------------------------- small screens */
+
+@media (max-width: 560px) {
+  .composer-status { display: none; }   /* the button state already says it */
+  .composer-tools { gap: 0.4rem; }
+  .tool-chip { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+  .count-pills { margin-left: 0; width: 100%; }
 }

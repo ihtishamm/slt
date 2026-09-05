@@ -63,13 +63,45 @@ export type VoiceInputProps = {
   onFinal: (text: string) => void;
   /** BCP-47 tag matching the page, e.g. "en-US". */
   lang?: string;
+  /**
+   * Status and error text, lifted to the parent.
+   *
+   * The microphone sits inside the composer next to Send, so its messages
+   * belong on the composer's own status line rather than under the button —
+   * otherwise the toolbar would jump every time the text changed.
+   */
+  onStatus?: (message: string) => void;
+  /** Mirrors the listening state so the composer can show it is recording. */
+  onListeningChange?: (listening: boolean) => void;
 };
 
-export default function VoiceInput({ onTranscript, onFinal, lang = "en-US" }: VoiceInputProps) {
+export default function VoiceInput({
+  onTranscript,
+  onFinal,
+  lang = "en-US",
+  onStatus,
+  onListeningChange,
+}: VoiceInputProps) {
   const [supported, setSupported] = useState<boolean | null>(null);
   const [listening, setListening] = useState(false);
-  const [message, setMessage] = useState("");
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+
+  // Kept in refs so the callbacks below never need to be re-created, which
+  // would otherwise restart the recogniser mid-sentence.
+  const statusRef = useRef(onStatus);
+  const listeningRef = useRef(onListeningChange);
+  statusRef.current = onStatus;
+  listeningRef.current = onListeningChange;
+
+  const lastMessage = useRef("");
+  const setMessage = useCallback((m: string) => {
+    lastMessage.current = m;
+    statusRef.current?.(m);
+  }, []);
+
+  useEffect(() => {
+    listeningRef.current?.(listening);
+  }, [listening]);
 
   // Support is resolved after mount: the server has no window, and rendering a
   // different answer there than here would be a hydration mismatch.
@@ -138,7 +170,8 @@ export default function VoiceInput({ onTranscript, onFinal, lang = "en-US" }: Vo
     recognition.onend = () => {
       setListening(false);
       recognitionRef.current = null;
-      setMessage((current) => (current === "Listening…" ? "" : current));
+      // Clear the prompt only if nothing more useful replaced it.
+      if (lastMessage.current === "Listening…") setMessage("");
     };
 
     recognitionRef.current = recognition;
@@ -149,41 +182,34 @@ export default function VoiceInput({ onTranscript, onFinal, lang = "en-US" }: Vo
       setMessage("Could not start the microphone. Try again.");
       setListening(false);
     }
-  }, [lang, onFinal, onTranscript]);
+  }, [lang, onFinal, onTranscript, setMessage]);
 
   // Nothing on the first paint, so the server and client agree.
   if (supported === null) return null;
 
   if (!supported) {
     return (
-      <div className="voice-input">
-        <button type="button" className="btn voice-btn" disabled aria-disabled="true">
-          <Icon name="microphone-slash" />
-          Voice input
-        </button>
-        <p className="voice-status">
-          Voice input needs Chrome, Edge, or Safari. You can still type above.
-        </p>
-      </div>
+      <button
+        type="button"
+        className="composer-btn composer-mic"
+        disabled
+        aria-disabled="true"
+        title="Voice input needs Chrome, Edge, or Safari"
+      >
+        <Icon name="microphone-slash" title="Voice input is unavailable in this browser" />
+      </button>
     );
   }
 
   return (
-    <div className="voice-input">
-      <button
-        type="button"
-        className={listening ? "btn voice-btn is-listening" : "btn voice-btn"}
-        onClick={listening ? stop : start}
-        aria-pressed={listening}
-        aria-label={listening ? "Stop listening" : "Start voice input"}
-      >
-        <Icon name={listening ? "stop" : "microphone"} />
-        {listening ? "Stop" : "Speak"}
-      </button>
-      {/* Announced to screen readers as it changes. */}
-      <p className="voice-status" role="status" aria-live="polite">
-        {message}
-      </p>
-    </div>
+    <button
+      type="button"
+      className={listening ? "composer-btn composer-mic is-listening" : "composer-btn composer-mic"}
+      onClick={listening ? stop : start}
+      aria-pressed={listening}
+      title={listening ? "Stop listening" : "Speak instead of typing"}
+    >
+      <Icon name={listening ? "stop" : "microphone"} title={listening ? "Stop listening" : "Start voice input"} />
+    </button>
   );
 }
