@@ -139,6 +139,27 @@ describe("toGloss", () => {
     });
   });
 
+  // "let's" is not a contraction to expand. Expanding it to "let us" produced
+  // signed English AND turned one unknown word into two fingerspelled cards.
+  describe("hortative let's", () => {
+    it("glosses let's as the inclusive subject", () => {
+      expect(g("let's play")).toBe("WE PLAY");
+      expect(g("let's go")).toBe("WE GO");
+      expect(g("lets eat")).toBe("WE EAT");
+    });
+
+    it("never produces LET US", () => {
+      expect(g("let's play")).not.toContain("LET");
+      expect(g("let's play")).not.toContain("US");
+    });
+
+    it("still expands the other contractions", () => {
+      expect(g("I don't like it")).toBe("ME LIKE NOT IT");
+      expect(g("I'm happy")).toBe("ME HAPPY");
+      expect(g("we'll go")).toBe("WILL WE GO");
+    });
+  });
+
   describe("pronouns", () => {
     it("maps English pronouns to ASL glosses", () => {
       expect(g("my name")).toBe("MY NAME");

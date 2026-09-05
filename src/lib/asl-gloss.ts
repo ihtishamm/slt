@@ -119,6 +119,17 @@ const PRONOUNS: Record<string, string> = {
   they: "THEY", them: "THEY", their: "THEIR", theirs: "THEIR", themselves: "THEY",
 };
 
+/**
+ * Hortative "let's".
+ *
+ * Expanding it to "let us" the way the other contractions expand was wrong
+ * twice over: it turned one unknown word into two, so "let's play" produced
+ * three fingerspelled cards instead of two, and LET US PLAY is signed English —
+ * no signer produces LET followed by US. ASL expresses the inclusive
+ * suggestion with the subject, so "let's play" is WE PLAY.
+ */
+const HORTATIVE: Record<string, string> = { "let's": "we", lets: "we" };
+
 /** Subject pronouns, for spotting the [subject][verb][object] shape. */
 const SUBJECT_PRONOUNS = new Set(["i", "you", "he", "she", "it", "we", "they"]);
 
@@ -153,7 +164,7 @@ const CONTRACTIONS: Record<string, string> = {
   "i've": "i have", "you've": "you have", "we've": "we have",
   "they've": "they have", "i'll": "i will", "you'll": "you will",
   "he'll": "he will", "she'll": "she will", "we'll": "we will",
-  "they'll": "they will", "i'd": "i would", "let's": "let us",
+  "they'll": "they will", "i'd": "i would",
   "what's": "what is", "who's": "who is", "where's": "where is",
   "how's": "how is", "that's": "that is", "there's": "there is",
 };
@@ -186,6 +197,13 @@ function tokenize(text: string): string[] {
 function expand(words: string[]): string[] {
   const out: string[] = [];
   for (const w of words) {
+    const hortative = HORTATIVE[w];
+    if (hortative) {
+      // Substituted rather than expanded, so it behaves as a normal subject
+      // for the rules that follow.
+      out.push(hortative);
+      continue;
+    }
     const full = CONTRACTIONS[w];
     if (full) out.push(...full.split(" "));
     else out.push(w);
