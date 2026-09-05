@@ -30,6 +30,8 @@ export type IconName =
   | "play"
   | "stop"
   | "send"
+  | "volume"
+  | "volume-off"
   | "sliders"
   | "keyboard";
 
@@ -66,6 +68,11 @@ const ICONS: Record<IconName, Shape[]> = {
     { d: "M5 11a7 7 0 0 0 10.5 6M19 11v1M12 18v3" },
     { d: "m3 3 18 18" },
   ],
+  volume: [
+    { d: "M11 5 6.5 9H3v6h3.5L11 19z" },
+    { d: "M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" },
+  ],
+  "volume-off": [{ d: "M11 5 6.5 9H3v6h3.5L11 19z" }, { d: "m16 10 5 4M21 10l-5 4" }],
   // A paper plane, the universal "send this" affordance.
   send: [{ d: "M21.5 12 3 4.5l3 7.5-3 7.5z", fill: true }, { d: "M6 12h15.5" }],
   sliders: [{ d: "M4 8h10M18 8h2M4 16h4M12 16h8" }, { d: "M16 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0M10 16a2 2 0 1 0-4 0 2 2 0 0 0 4 0" }],

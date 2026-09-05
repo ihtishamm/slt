@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { alphabets, type AlphabetKey, type SignMap } from "@/data/alphabets";
 import { languagePages } from "@/data/navigation";
-import { hasWordSigns, countSigns } from "@/lib/sign-lookup";
+import { hasWordSigns, countSigns, tokenLabel } from "@/lib/sign-lookup";
 import { MARKER_LABELS } from "@/lib/asl-gloss";
 import { translate as translateText } from "@/lib/translate";
 import SignSequence from "./SignSequence";
 import VoiceInput from "./VoiceInput";
+import { useSpeech } from "./useSpeech";
 import "./translator.css";
 import Icon from "@/components/ui/Icon";
 
@@ -61,6 +62,8 @@ export default function Translator({
   const [speed, setSpeed] = useState(PLAY_SPEEDS[1].ms);
   const [voiceStatus, setVoiceStatus] = useState("");
   const [listening, setListening] = useState(false);
+  /** Read each sign aloud while playing. On by default; muted per visitor. */
+  const [speakAloud, setSpeakAloud] = useState(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   /*
@@ -107,12 +110,14 @@ export default function Translator({
   /* ----------------------------------------------------------- sequencer */
 
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const speech = useSpeech(alphabet === "asl" ? "en-US" : "en-US");
 
   const stopPlaying = useCallback(() => {
     if (timer.current) clearTimeout(timer.current);
     timer.current = null;
     setPlayingIndex(null);
-  }, []);
+    speech.cancel();
+  }, [speech]);
 
   // Advances one sign at a time; clears itself at the end of the sequence.
   useEffect(() => {
@@ -127,7 +132,24 @@ export default function Translator({
     };
   }, [playingIndex, tokens.length, speed]);
 
-  // Never leave a timer running behind an unmounted component.
+  /*
+   * Say the word as its card lights up.
+   *
+   * This is what makes "Play all" teachable rather than a slideshow — you hear
+   * the English at the same moment you see the handshape. It speaks the same
+   * label the card shows, via tokenLabel, so the two cannot drift apart.
+   *
+   * Clicking Play all is the user gesture browsers require before speech, so
+   * nothing here is blocked by autoplay policy.
+   */
+  useEffect(() => {
+    if (!speakAloud || playingIndex === null) return;
+    const token = tokens[playingIndex];
+    if (token) speech.speak(tokenLabel(token));
+  }, [playingIndex, speakAloud, tokens, speech]);
+
+  // Never leave a timer running — or a voice talking — behind an unmounted
+  // component.
   useEffect(() => stopPlaying, [stopPlaying]);
 
   /* ---------------------------------------------------------------- body */
@@ -409,6 +431,25 @@ export default function Translator({
               <Icon name={playingIndex === null ? "play" : "stop"} />
               {playingIndex === null ? "Play all" : "Stop"}
             </button>
+
+            {/* Speech is on by default, but it plays without being asked, so
+                there has to be a way to stop it that is visible before it
+                starts — not buried in a settings panel. */}
+            {speech.supported && (
+              <button
+                type="button"
+                className={speakAloud ? "tool-chip is-active" : "tool-chip"}
+                onClick={() => {
+                  if (speakAloud) speech.cancel();
+                  setSpeakAloud(!speakAloud);
+                }}
+                aria-pressed={speakAloud}
+                title={speakAloud ? "Turn off spoken words" : "Speak each word aloud"}
+              >
+                <Icon name={speakAloud ? "volume" : "volume-off"} />
+                {speakAloud ? "Sound on" : "Sound off"}
+              </button>
+            )}
 
             <label className="tool-chip tool-select">
               Speed

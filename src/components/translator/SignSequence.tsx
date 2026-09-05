@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { ResolvedToken } from "@/lib/sign-lookup";
+import { tokenLabel, type ResolvedToken } from "@/lib/sign-lookup";
 import Icon from "@/components/ui/Icon";
 
 /**
@@ -56,7 +56,7 @@ export default function SignSequence({
           const { entry } = token;
           return (
             <div className={className} key={`${entry.gloss}-${i}`} style={{ width: itemWidth }}>
-              <div className="sign-header">{entry.words[0]}</div>
+              <div className="sign-header">{tokenLabel(token)}</div>
               <div className="sign-content">
                 <SignMedia entry={entry} size={size} active={active} />
               </div>

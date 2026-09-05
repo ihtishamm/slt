@@ -204,3 +204,13 @@ export function phraseKeys(): string[] {
 export function lookupExact(key: string): SignEntry | undefined {
   return byWord.get(normalize(key)) ?? findWord(normalize(key));
 }
+
+/**
+ * The word shown on a token's card — and spoken aloud during playback.
+ *
+ * One implementation so the two can never disagree: if the card says "i love
+ * you" the voice must say "i love you", not "I-LOVE-YOU" or the raw input.
+ */
+export function tokenLabel(token: ResolvedToken): string {
+  return token.kind === "sign" ? token.entry.words[0] : token.source;
+}
