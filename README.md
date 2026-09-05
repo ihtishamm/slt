@@ -44,24 +44,36 @@ public/
 └── <language>-sign-language/         per-language letter images
 
 blogs/                                WordPress — NOT migrated, see below
-_archive/legacy-sources.tar.gz        the original HTML/CSS/JS, 281K
-tools/                                the one-time migration scripts
+tools/                                generators and one-time migration scripts
 ```
 
-## `_archive/`
+## Deploying: two rules that are not in this repo
 
-Holds one file: `legacy-sources.tar.gz` (281K) — the original 18 HTML pages,
-their stylesheets and scripts, plus the old `.htaccess`, `robots.txt` and
-`sitemap.xml`. Extract with:
+The site used to run on Apache, and its `.htaccess` did four things. Two are now
+in [`next.config.ts`](next.config.ts) — the root-level asset rewrites and the
+cache lifetimes — and one, trailing-slash removal, Next does by default.
 
-```bash
-tar xzf _archive/legacy-sources.tar.gz
-```
+The remaining two **cannot** live in this app and must be configured wherever it
+is hosted:
 
-The legacy *images* are not in it: all 429 of them were verified byte-identical
-to the copies now under `public/`, so keeping a second set would be dead weight.
-The abandoned Next.js scaffold that used to sit here (89M, mostly a stale
-`.next` build) has been deleted outright.
+- **www → non-www.** `www.sltranslator.com/*` must 301 to `sltranslator.com/*`.
+- **Force HTTPS.** `http://*` must 301 to `https://*`.
+
+They are DNS/host/CDN concerns, and they were only ever written down in the old
+`.htaccess`, which is no longer in the repo. Losing them costs the site its
+canonical URLs, so they are recorded here.
+
+### Why the asset rewrites matter
+
+Before the `assets/` reorganisation, images lived in the document root and the
+`.htaccess` rewrote the old URLs internally so they kept answering 200. That
+covers 94 images — and the home page's own `og:image` was among the paths that
+only ever resolved that way. The rewrite in `next.config.ts` reproduces it, so
+`/iloveyou.png` still serves `/assets/images/iloveyou.png` once the site is
+served by Node rather than Apache.
+
+`/style.css` and `/script.js` are deliberately not rewritten: that CSS and JS is
+compiled into hashed Next bundles now, so there is nothing to point them at.
 
 ## Root-level files like `ads.txt`
 
