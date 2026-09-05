@@ -33,6 +33,14 @@ const PLAY_SPEEDS = [
 ];
 
 /**
+ * Slow by default. Most visitors here are learning the signs, not reviewing
+ * ones they already know, and a handshape needs a moment to read — more so now
+ * that each one is also spoken aloud. Named rather than indexed so reordering
+ * the list above cannot silently change the default.
+ */
+const DEFAULT_SPEED = PLAY_SPEEDS.find((s) => s.label === "Slow")!.ms;
+
+/**
  * The text-to-sign widget.
  *
  * Originally this spelled every character, so "thank you" came out as nine
@@ -59,7 +67,7 @@ export default function Translator({
   const [highlightCapitals, setHighlightCapitals] = useState(true);
   const [size, setSize] = useState(120);
   const [showingAlphabet, setShowingAlphabet] = useState(false);
-  const [speed, setSpeed] = useState(PLAY_SPEEDS[1].ms);
+  const [speed, setSpeed] = useState(DEFAULT_SPEED);
   const [voiceStatus, setVoiceStatus] = useState("");
   const [listening, setListening] = useState(false);
   /** Read each sign aloud while playing. On by default; muted per visitor. */
