@@ -34,7 +34,7 @@ export default function SiteHeader({ highlightActive = false }: { highlightActiv
           />
         </Link>
 
-        <nav className="main-nav">
+        <nav className={open ? "main-nav active" : "main-nav"}>
           <ul className={open ? "nav-list active" : "nav-list"} id="navList">
             {mainNav.map((item) => {
               const current = highlightActive && pathname === item.href;

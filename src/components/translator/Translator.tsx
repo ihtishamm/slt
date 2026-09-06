@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { alphabets, type AlphabetKey, type SignMap } from "@/data/alphabets";
 import { languagePages } from "@/data/navigation";
 import { hasWordSigns, countSigns, tokenLabel } from "@/lib/sign-lookup";
@@ -57,6 +58,7 @@ export default function Translator({
   convertLabel,
   defaultText = "I Love You",
 }: TranslatorProps) {
+  const pathname = usePathname();
   const signs: SignMap = alphabets[alphabet];
   const wordSigns = hasWordSigns(alphabet);
 
@@ -324,20 +326,19 @@ export default function Translator({
           <label className="tool-chip tool-select">
             Language
             <select
-              value=""
+              value={languagePages.find((l) => l.href === pathname)?.href || pathname}
               onChange={(e) => {
-                if (e.target.value) window.location.href = e.target.value;
+                if (e.target.value && e.target.value !== pathname) {
+                  window.location.href = e.target.value;
+                }
               }}
               aria-label="Switch sign language"
             >
-              <option value="">This page</option>
-              {languagePages
-                .filter((l) => l.href !== "/")
-                .map((l) => (
-                  <option key={l.href} value={l.href}>
-                    {l.label}
-                  </option>
-                ))}
+              {languagePages.map((l) => (
+                <option key={l.href} value={l.href}>
+                  {l.label}
+                </option>
+              ))}
             </select>
           </label>
         </div>

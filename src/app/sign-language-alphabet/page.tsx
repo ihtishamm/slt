@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
+import AlphabetTabs from "@/components/alphabet/AlphabetTabs";
 import "@/styles/sign-language-alphabet.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -201,8 +202,7 @@ export default function SignLanguageAlphabetPage() {
           </p>
         </center>
         <br />
-        <div className="language-selector" id="languageSelector"></div>
-        <div className="alphabet-container" id="alphabetContainer"></div>
+        <AlphabetTabs />
         <div className="main-info">
           <div className="sign-language-alphabets">
             <h2>
@@ -210,15 +210,15 @@ export default function SignLanguageAlphabetPage() {
             </h2>
             <img src="/sign-language-alphabet/american-sign-language-alphabet.png" alt="Chart of American Sign Language Alphabet" width={867} height={511} decoding="async" />
             <p>
-              The
+              The{" "}
               <strong>
-                American
+                American{" "}
                 <Link href="/">
                   Sign Language
-                </Link>
+                </Link>{" "}
                 (ASL) alphabet
               </strong>
-              , or
+              , or{" "}
               <em>
                 American Manual Alphabet
               </em>
@@ -231,14 +231,14 @@ export default function SignLanguageAlphabetPage() {
             <p>
               <strong>
                 Lengua de Signos Española (LSE)
-              </strong>
+              </strong>{" "}
               is the primary visual language used by the Deaf community in Spain. It’s a beautiful and expressive language that uses handshapes, movements, and facial expressions to represent ideas and emotions.
 
 While Spain shares a spoken language with many countries, “
-              <Link href="/">
+              <Link href="/spanish-sign-language">
                 Spanish Sign Language
               </Link>
-              is unique” to Spain and is not the same as Mexican Sign Language (LSM) or Latin American sign systems. Each region within Spain,  like Madrid, Andalusia, or Catalonia, even has small variations in the way some signs are used.
+              ” is unique to Spain and is not the same as Mexican Sign Language (LSM) or Latin American sign systems. Each region within Spain,  like Madrid, Andalusia, or Catalonia, even has small variations in the way some signs are used.
 
 The LSE alphabet is one-handed, and it’s used for fingerspelling names, locations, technical words, or any word that doesn’t have a specific sign.
             </p>

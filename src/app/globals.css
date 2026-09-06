@@ -14,3 +14,60 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Mobile Header Navigation Drawer Styles */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 8px;
+  }
+
+  .main-nav.active {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1000 !important;
+    border-bottom: 3px solid #6366f1 !important;
+  }
+
+  .main-nav.active .nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.75rem 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+  }
+
+  .main-nav.active .nav-item {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .main-nav.active .nav-link {
+    display: block !important;
+    padding: 0.875rem 1.5rem !important;
+    color: #1e293b !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
+  .main-nav.active .nav-link:hover {
+    background-color: #f1f5f9 !important;
+    color: #4f46e5 !important;
+  }
+}
+
